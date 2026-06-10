@@ -72,11 +72,11 @@ export default function WorkflowCheck() {
           </span>
         </div>
 
-        <div className="glass-card bg-white p-6 md:p-10 shadow-2xl shadow-slate-200/50">
+        <div className="glass-card bg-white p-5 md:p-10 shadow-2xl shadow-slate-200/50">
           {!isCompleted ? (
             <>
               {/* Progress Bar */}
-              <div className="flex items-center justify-between mb-8 relative">
+              <div className="flex items-center justify-between mb-6 relative">
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-100 rounded-full z-0"></div>
                 <div 
                   className="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-brand-blue rounded-full z-0 transition-all duration-300" 
@@ -94,20 +94,20 @@ export default function WorkflowCheck() {
               </div>
 
               {/* Question */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+              <div className="mb-6">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-5">
                   <span className="text-brand-blue mr-2">Q{currentStep + 1}.</span> 
                   {steps[currentStep].title}
                 </h3>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
                   {steps[currentStep].options.map(option => {
                     const isSelected = (selections[currentStep] || []).includes(option);
                     return (
                       <button
                         key={option}
                         onClick={() => toggleSelection(currentStep, option)}
-                        className={`text-left px-4 py-3 rounded-xl border-2 transition-all duration-200 font-medium
+                        className={`text-left px-3 py-2.5 md:px-4 md:py-3 rounded-xl border-2 transition-all duration-200 font-medium text-sm md:text-base
                           ${isSelected 
                             ? 'border-brand-blue bg-blue-50 text-brand-blue shadow-sm' 
                             : 'border-slate-100 hover:border-slate-200 hover:bg-slate-50 text-slate-600'
