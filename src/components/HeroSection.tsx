@@ -59,13 +59,13 @@ export default function HeroSection() {
                   <span className="text-sm font-bold text-slate-600">流程自動化概念</span>
                 </div>
 
-                {/* Pipeline Container - Vertical Flow */}
-                <div className="flex flex-col items-center justify-center gap-4 md:gap-6 w-full max-w-4xl mx-auto relative z-10">
+                {/* Pipeline Container - Horizontal Flow Restored */}
+                <div className="flex flex-col xl:flex-row items-center justify-center gap-3 lg:gap-4 w-full">
                   
                   {/* Step 1: Messy Inputs (9 Pain Points) */}
-                  <div className="bg-white p-5 md:p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full relative group hover:-translate-y-1 transition-transform">
-                    <div className="text-sm font-bold text-slate-700 mb-5 md:mb-6 text-center border-b border-slate-100 pb-3">常見流程卡點</div>
-                    <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
+                  <div className="bg-white p-4 md:p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full xl:w-48 relative group hover:-translate-y-1 transition-transform">
+                    <div className="text-xs font-bold text-slate-700 mb-3 text-center border-b border-slate-100 pb-2">常見流程卡點</div>
+                    <div className="flex flex-wrap gap-1.5 justify-center">
                       {[
                         { text: '紙本滿天飛', color: 'text-blue-600 bg-blue-50 border-blue-100' },
                         { text: '容易漏單', color: 'text-orange-600 bg-orange-50 border-orange-100' },
@@ -77,74 +77,81 @@ export default function HeroSection() {
                         { text: '輸入錯誤', color: 'text-amber-600 bg-amber-50 border-amber-100' },
                         { text: '溝通斷層', color: 'text-rose-600 bg-rose-50 border-rose-100' },
                       ].map((item, i) => (
-                        <span key={i} className={`text-xs md:text-[13px] font-bold px-3 md:px-4 py-1.5 rounded-full border ${item.color} whitespace-nowrap`}>
+                        <span key={i} className={`text-[10px] font-bold px-1.5 py-1 rounded-md border ${item.color} whitespace-nowrap grow text-center`}>
                           {item.text}
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  {/* Arrow 1 Down */}
-                  <div className="text-slate-300 flex justify-center py-1 md:py-2">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
-                      <line x1="12" y1="5" x2="12" y2="19"></line>
-                      <polyline points="19 12 12 19 5 12"></polyline>
+                  {/* Arrow 1 */}
+                  <div className="text-slate-300 xl:-rotate-90 xl:hidden flex justify-center py-1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rotate-90 animate-pulse">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                  <div className="hidden xl:block text-slate-300">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </div>
 
                   {/* Step 2: Optimization Engine */}
-                  <div className="relative w-full">
+                  <div className="relative w-full xl:w-56">
                     <div className="absolute -inset-4 bg-brand-blue/10 rounded-[2.5rem] blur-xl animate-pulse"></div>
-                    <div className="bg-white border-2 border-brand-blue/20 p-6 md:p-8 rounded-[2rem] shadow-2xl shadow-brand-blue/10 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 group hover:scale-[1.02] transition-transform cursor-default w-full">
-                      
-                      <div className="flex flex-col items-center lg:items-start text-center lg:text-left shrink-0">
-                        <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-teal rounded-2xl flex items-center justify-center mb-4 shadow-lg text-white">
-                          <Settings className="w-8 h-8 animate-[spin_4s_linear_infinite]" />
-                        </div>
-                        <div className="text-2xl font-black text-slate-800 tracking-tight whitespace-nowrap">Optimaks 流程梳理</div>
+                    <div className="bg-white border-2 border-brand-blue/20 p-5 md:p-6 rounded-[2rem] shadow-2xl shadow-brand-blue/10 relative z-10 flex flex-col items-center justify-center group hover:scale-105 transition-transform cursor-default w-full">
+                      <div className="w-12 h-12 bg-gradient-to-br from-brand-blue to-brand-teal rounded-2xl flex items-center justify-center mb-3 shadow-lg text-white">
+                        <Settings className="w-6 h-6 animate-[spin_4s_linear_infinite]" />
                       </div>
-
-                      <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 w-full">
-                        <div className="flex items-center justify-center gap-2 bg-slate-50 px-4 md:px-5 py-3 rounded-xl border border-slate-100 flex-1">
-                          <CheckCircle2 className="w-5 h-5 text-brand-blue shrink-0" />
-                          <span className="text-sm font-bold text-slate-700 whitespace-nowrap">流程梳理</span>
+                      <div className="text-lg font-black text-slate-800 mb-4 tracking-tight whitespace-nowrap text-center">Optimaks 流程梳理</div>
+                      <div className="flex flex-col gap-2 w-full">
+                        <div className="flex items-center justify-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                          <CheckCircle2 className="w-3 h-3 text-brand-blue shrink-0" />
+                          <span className="text-xs font-bold text-slate-700 whitespace-nowrap">流程梳理</span>
                         </div>
-                        <div className="flex items-center justify-center gap-2 bg-slate-50 px-4 md:px-5 py-3 rounded-xl border border-slate-100 flex-1">
-                          <Database className="w-5 h-5 text-orange-500 shrink-0" />
-                          <span className="text-sm font-bold text-slate-700 whitespace-nowrap">系統串接</span>
+                        <div className="flex items-center justify-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                          <Database className="w-3 h-3 text-orange-500 shrink-0" />
+                          <span className="text-xs font-bold text-slate-700 whitespace-nowrap">系統串接</span>
                         </div>
-                        <div className="flex items-center justify-center gap-2 bg-slate-50 px-4 md:px-5 py-3 rounded-xl border border-slate-100 flex-1">
-                          <Zap className="w-5 h-5 text-teal-500 shrink-0" />
-                          <span className="text-sm font-bold text-slate-700 whitespace-nowrap">AI 協作</span>
+                        <div className="flex items-center justify-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                          <Zap className="w-3 h-3 text-teal-500 shrink-0" />
+                          <span className="text-xs font-bold text-slate-700 whitespace-nowrap">AI 協作</span>
                         </div>
                       </div>
-
                     </div>
                   </div>
 
-                  {/* Arrow 2 Down */}
-                  <div className="text-slate-300 flex justify-center py-1 md:py-2">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse delay-75">
-                      <line x1="12" y1="5" x2="12" y2="19"></line>
-                      <polyline points="19 12 12 19 5 12"></polyline>
+                  {/* Arrow 2 */}
+                  <div className="text-slate-300 xl:-rotate-90 xl:hidden flex justify-center py-1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rotate-90 animate-pulse delay-75">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                  <div className="hidden xl:block text-slate-300">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse delay-75">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </div>
 
                   {/* Step 3: Streamlined Output */}
-                  <div className="bg-white p-5 md:p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full relative group hover:-translate-y-1 transition-transform">
-                    <div className="text-sm font-bold text-brand-blue mb-5 md:mb-6 text-center border-b border-slate-100 pb-3">導入成效</div>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                      <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-5 md:p-6 rounded-2xl shadow-lg shadow-blue-500/30 flex flex-col items-center justify-center gap-3">
-                        <div className="bg-white/20 p-3 rounded-xl shrink-0"><Zap className="w-8 h-8 text-white" /></div>
-                        <div className="font-bold text-lg tracking-wide whitespace-nowrap">效率飆升</div>
+                  <div className="bg-white p-4 md:p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full xl:w-48 relative group hover:-translate-y-1 transition-transform">
+                    <div className="text-xs font-bold text-brand-blue mb-3 text-center border-b border-slate-100 pb-2">導入成效</div>
+                    <div className="flex flex-col gap-2">
+                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-2.5 rounded-xl shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
+                        <Zap className="w-4 h-4 text-white shrink-0" />
+                        <div className="font-bold text-xs whitespace-nowrap">效率飆升</div>
                       </div>
-                      <div className="bg-gradient-to-br from-teal-500 to-teal-600 text-white p-5 md:p-6 rounded-2xl shadow-lg shadow-teal-500/30 flex flex-col items-center justify-center gap-3">
-                        <div className="bg-white/20 p-3 rounded-xl shrink-0"><CheckCircle2 className="w-8 h-8 text-white" /></div>
-                        <div className="font-bold text-lg tracking-wide whitespace-nowrap">零重複做工</div>
+                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-2.5 rounded-xl shadow-lg shadow-teal-500/30 flex items-center justify-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
+                        <div className="font-bold text-xs whitespace-nowrap">零重複做工</div>
                       </div>
-                      <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 text-white p-5 md:p-6 rounded-2xl shadow-lg shadow-indigo-500/30 flex flex-col items-center justify-center gap-3">
-                        <div className="bg-white/20 p-3 rounded-xl shrink-0"><BarChart3 className="w-8 h-8 text-white" /></div>
-                        <div className="font-bold text-lg tracking-wide whitespace-nowrap">決策更清晰</div>
+                      <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white p-2.5 rounded-xl shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2">
+                        <BarChart3 className="w-4 h-4 text-white shrink-0" />
+                        <div className="font-bold text-xs whitespace-nowrap">決策更清晰</div>
                       </div>
                     </div>
                   </div>
