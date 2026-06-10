@@ -6,19 +6,19 @@ import { ChevronRight, Check, ArrowRight } from 'lucide-react';
 const steps = [
   {
     title: '你是哪種類型的企業？',
-    options: ['冷氣 / Aircon', '清潔 / Cleaning', '維修 / Repair', '其他服務業 / Others']
+    options: ['冷氣 / Aircon', '清潔 / Cleaning', '維修 / Repair', '物流 / Logistics', '會計 / Accounting', '其他服務業']
   },
   {
     title: '你最常卡在哪裡？',
-    options: ['太多 Paperwork', '詢價容易漏', '排程/工單混亂', '資料太分散']
+    options: ['太多 paperwork', '詢價容易漏', '報價太慢', '排程混亂', '工單狀態不清楚', '付款難追', '資料太分散']
   },
   {
     title: '你現在主要使用哪些工具？',
-    options: ['WhatsApp / Line', 'Excel / Sheet', 'Email', '紙本文件']
+    options: ['WhatsApp / Line', 'Excel / Google Sheet', 'Email', 'Calendar', '紙本文件', '現有系統 (CRM / ERP)']
   },
   {
     title: '你最想改善什麼？',
-    options: ['減少重複人工', '減少漏單', '讓排程更清楚', '導入自動化']
+    options: ['減少重複人工', '減少漏單', '加快報價速度', '讓排程更清楚', '讓老闆看得到進度', '讓員工更好交接', '導入 AI / 自動化']
   }
 ];
 
@@ -100,7 +100,8 @@ export default function WorkflowCheck() {
                   {steps[currentStep].title}
                 </h3>
                 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+                <div className="max-h-[35vh] md:max-h-none overflow-y-auto pr-1 -mr-1 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-slate-200 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 pb-1">
                   {steps[currentStep].options.map(option => {
                     const isSelected = (selections[currentStep] || []).includes(option);
                     return (
@@ -121,6 +122,7 @@ export default function WorkflowCheck() {
                       </button>
                     );
                   })}
+                  </div>
                 </div>
               </div>
 
