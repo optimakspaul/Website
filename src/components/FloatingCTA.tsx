@@ -5,42 +5,53 @@ import { Rocket } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function FloatingCTA() {
-  const t = useTranslations('FinalCTA'); // Let's reuse FinalCTA dictionary for this button
-  const [isVisible, setIsVisible] = useState(false);
+  const t = useTranslations('FinalCTA');
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOverlapping, setIsOverlapping] = useState(false);
 
   useEffect(() => {
+    // 1. Handle scroll distance for initial show
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const isEnoughScrolled = scrollY > 300;
-      
-      // 判斷 workflow-check 是否在畫面上
-      const workflowSection = document.getElementById('workflow-check');
-      let isWorkflowVisible = false;
-      if (workflowSection) {
-        const rect = workflowSection.getBoundingClientRect();
-        // 當區塊的頂部進入畫面，且底部還沒離開畫面時，代表該區塊正在畫面上
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          isWorkflowVisible = true;
-        }
-      }
-
-      // 判斷是否接近頁面底部 (隱藏以免擋住 FinalCTA 或 Footer)
-      const isNearBottom = (window.innerHeight + scrollY) >= document.body.offsetHeight - 500;
-
-      // 當滾動超過 300px，且不在 workflow 區塊，也不在頁尾時，才顯示按鈕
-      if (isEnoughScrolled && !isWorkflowVisible && !isNearBottom) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsScrolled(window.scrollY > 300);
     };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // 初始化檢查
-    return () => window.removeEventListener('scroll', handleScroll);
+    // 2. Handle overlap with specific sections using IntersectionObserver
+    // We observe workflow-check, final-cta, and footer to hide the floating CTA when they are on screen.
+    const observer = new IntersectionObserver((entries) => {
+      // If any of the observed elements are intersecting the viewport
+      const anyVisible = entries.some(entry => entry.isIntersecting);
+      setIsOverlapping(anyVisible);
+    }, { 
+      root: null, 
+      threshold: 0, // Trigger as soon as 1 pixel is visible
+      rootMargin: "50px 0px 50px 0px" // Slight margin to hide it slightly before it overlaps
+    });
+
+    // We can observe by id. FinalCTA and Footer don't have ids, so let's observe industries and the bottom
+    const elementsToObserve = [
+      document.getElementById('workflow-check'),
+      document.getElementById('pain-points') // Optional: if we want to show it here
+    ];
+
+    // Alternatively, we can select by element type if we know what we want to avoid.
+    // Let's just reliably observe 'workflow-check'
+    const workflowEl = document.getElementById('workflow-check');
+    if (workflowEl) observer.observe(workflowEl);
+
+    // Let's also observe the footer to hide it at the bottom
+    const footerEl = document.querySelector('footer');
+    if (footerEl) observer.observe(footerEl);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
-  // Use generic transition classes for smooth fade in/out
+  const isVisible = isScrolled && !isOverlapping;
+
   return (
     <div 
       className={`fixed bottom-0 left-0 right-0 p-4 z-50 md:hidden bg-gradient-to-t from-white via-white/90 to-transparent pb-6 pt-10 transition-all duration-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'}`}
