@@ -7,6 +7,7 @@ import ServicesSection from '@/components/ServicesSection';
 import IndustriesSection from '@/components/IndustriesSection';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
+import FloatingCTA from '@/components/FloatingCTA';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
+      <FloatingCTA />
     </>
   );
 }
