@@ -10,19 +10,19 @@ export default function WorkflowCheck() {
   const steps = [
     {
       title: t('step_1_title'),
-      options: [t('step_1_opt_1'), t('step_1_opt_2'), t('step_1_opt_3'), t('step_1_opt_4')]
+      options: [t('step_1_opt_1'), t('step_1_opt_2'), t('step_1_opt_3'), t('step_1_opt_4'), t('step_1_opt_5'), t('step_1_opt_6')]
     },
     {
       title: t('step_2_title'),
-      options: [t('step_2_opt_1'), t('step_2_opt_2'), t('step_2_opt_3'), t('step_2_opt_4')]
+      options: [t('step_2_opt_1'), t('step_2_opt_2'), t('step_2_opt_3'), t('step_2_opt_4'), t('step_2_opt_5'), t('step_2_opt_6')]
     },
     {
       title: t('step_3_title'),
-      options: [t('step_3_opt_1'), t('step_3_opt_2'), t('step_3_opt_3'), t('step_3_opt_4')]
+      options: [t('step_3_opt_1'), t('step_3_opt_2'), t('step_3_opt_3'), t('step_3_opt_4'), t('step_3_opt_5'), t('step_3_opt_6')]
     },
     {
       title: t('step_4_title'),
-      options: [t('step_4_opt_1'), t('step_4_opt_2'), t('step_4_opt_3'), t('step_4_opt_4')]
+      options: [t('step_4_opt_1'), t('step_4_opt_2'), t('step_4_opt_3'), t('step_4_opt_4'), t('step_4_opt_5'), t('step_4_opt_6')]
     }
   ];
 
