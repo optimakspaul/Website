@@ -60,12 +60,12 @@ export default function HeroSection() {
                 </div>
 
                 {/* Pipeline Container */}
-                <div className="flex flex-col lg:flex-row items-start justify-center gap-4 lg:gap-6 w-full">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 w-full">
                   
                   {/* Step 1: Messy Inputs (9 Pain Points) */}
-                  <div className="bg-white p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-48 relative group hover:-translate-y-1 transition-transform">
+                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-[260px] relative group hover:-translate-y-1 transition-transform">
                     <div className="text-sm font-bold text-slate-700 mb-4 text-center border-b border-slate-100 pb-3">常見流程卡點</div>
-                    <div className="flex flex-wrap gap-2 justify-center">
+                    <div className="flex flex-wrap gap-2">
                       {[
                         { text: '紙本滿天飛', color: 'text-blue-600 bg-blue-50 border-blue-100' },
                         { text: '容易漏單', color: 'text-orange-600 bg-orange-50 border-orange-100' },
@@ -77,7 +77,7 @@ export default function HeroSection() {
                         { text: '輸入錯誤', color: 'text-amber-600 bg-amber-50 border-amber-100' },
                         { text: '溝通斷層', color: 'text-rose-600 bg-rose-50 border-rose-100' },
                       ].map((item, i) => (
-                        <span key={i} className={`text-[11px] font-bold px-2 py-1 rounded-md border ${item.color}`}>
+                        <span key={i} className={`text-[12px] font-bold px-2.5 py-1 rounded-md border ${item.color} whitespace-nowrap grow text-center`}>
                           {item.text}
                         </span>
                       ))}
@@ -99,25 +99,25 @@ export default function HeroSection() {
                   </div>
 
                   {/* Step 2: Optimization Engine */}
-                  <div className="relative w-full lg:w-56">
+                  <div className="relative w-full lg:w-[280px]">
                     <div className="absolute -inset-4 bg-brand-blue/10 rounded-[2.5rem] blur-xl animate-pulse"></div>
-                    <div className="bg-white border-2 border-brand-blue/20 p-6 rounded-[2rem] shadow-2xl shadow-brand-blue/10 relative z-10 flex flex-col items-center justify-center group hover:scale-105 transition-transform cursor-default w-full">
+                    <div className="bg-white border-2 border-brand-blue/20 p-6 md:p-8 rounded-[2rem] shadow-2xl shadow-brand-blue/10 relative z-10 flex flex-col items-center justify-center group hover:scale-105 transition-transform cursor-default w-full">
                       <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-teal rounded-2xl flex items-center justify-center mb-5 shadow-lg text-white">
                         <Settings className="w-8 h-8 animate-[spin_4s_linear_infinite]" />
                       </div>
-                      <div className="text-xl font-black text-slate-800 mb-4 tracking-tight">Optimaks<br/>流程梳理</div>
-                      <div className="flex flex-col gap-2 w-full">
-                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 justify-center">
-                          <CheckCircle2 className="w-4 h-4 text-brand-blue" />
-                          <span className="text-xs font-bold text-slate-600">流程梳理</span>
+                      <div className="text-xl font-black text-slate-800 mb-5 tracking-tight whitespace-nowrap text-center">Optimaks 流程梳理</div>
+                      <div className="flex flex-col gap-3 w-full">
+                        <div className="flex items-center justify-center gap-2 bg-slate-50 px-4 py-2.5 rounded-lg border border-slate-100">
+                          <CheckCircle2 className="w-4 h-4 text-brand-blue shrink-0" />
+                          <span className="text-sm font-bold text-slate-700 whitespace-nowrap">流程梳理</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 justify-center">
-                          <Database className="w-4 h-4 text-orange-500" />
-                          <span className="text-xs font-bold text-slate-600">系統串接</span>
+                        <div className="flex items-center justify-center gap-2 bg-slate-50 px-4 py-2.5 rounded-lg border border-slate-100">
+                          <Database className="w-4 h-4 text-orange-500 shrink-0" />
+                          <span className="text-sm font-bold text-slate-700 whitespace-nowrap">系統串接</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 justify-center">
-                          <Zap className="w-4 h-4 text-teal-500" />
-                          <span className="text-xs font-bold text-slate-600">AI 協作</span>
+                        <div className="flex items-center justify-center gap-2 bg-slate-50 px-4 py-2.5 rounded-lg border border-slate-100">
+                          <Zap className="w-4 h-4 text-teal-500 shrink-0" />
+                          <span className="text-sm font-bold text-slate-700 whitespace-nowrap">AI 協作</span>
                         </div>
                       </div>
                     </div>
@@ -138,20 +138,20 @@ export default function HeroSection() {
                   </div>
 
                   {/* Step 3: Streamlined Output */}
-                  <div className="bg-white p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-48 relative group hover:-translate-y-1 transition-transform">
+                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-[260px] relative group hover:-translate-y-1 transition-transform">
                     <div className="text-sm font-bold text-brand-blue mb-4 text-center border-b border-slate-100 pb-3">導入成效</div>
                     <div className="flex flex-col gap-3">
-                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
-                        <Zap className="w-4 h-4 text-white" />
-                        <div className="font-bold text-sm">效率飆升</div>
+                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-xl shadow-lg shadow-blue-500/30 flex items-center gap-3">
+                        <div className="bg-white/20 p-2 rounded-lg shrink-0"><Zap className="w-5 h-5 text-white" /></div>
+                        <div className="font-bold text-sm tracking-wide whitespace-nowrap">效率飆升</div>
                       </div>
-                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-3 rounded-xl shadow-lg shadow-teal-500/30 flex items-center justify-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-white" />
-                        <div className="font-bold text-sm">零重複做工</div>
+                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-4 rounded-xl shadow-lg shadow-teal-500/30 flex items-center gap-3">
+                        <div className="bg-white/20 p-2 rounded-lg shrink-0"><CheckCircle2 className="w-5 h-5 text-white" /></div>
+                        <div className="font-bold text-sm tracking-wide whitespace-nowrap">零重複做工</div>
                       </div>
-                      <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white p-3 rounded-xl shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2">
-                        <BarChart3 className="w-4 h-4 text-white" />
-                        <div className="font-bold text-sm">決策更清晰</div>
+                      <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white p-4 rounded-xl shadow-lg shadow-indigo-500/30 flex items-center gap-3">
+                        <div className="bg-white/20 p-2 rounded-lg shrink-0"><BarChart3 className="w-5 h-5 text-white" /></div>
+                        <div className="font-bold text-sm tracking-wide whitespace-nowrap">決策更清晰</div>
                       </div>
                     </div>
                   </div>
