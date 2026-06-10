@@ -8,23 +8,23 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Content */}
-          <div className="max-w-2xl xl:pr-12">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="max-w-2xl xl:pr-12 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
               <div className="w-1.5 h-5 bg-brand-green rounded-full"></div>
               <span className="text-sm font-bold text-slate-500 tracking-wide">先把流程理順，再讓科技幫你做得更有效率。</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#1e3a8a] leading-[1.2] mb-6 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-800 leading-[1.2] mb-6 tracking-tight">
               我們幫助中小企業<br />
               <span className="text-[#2563eb]">理順流程 × 整合科技 × 提升效率</span>
             </h1>
             
-            <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl">
+            <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
               結合 AI、n8n 與輕量系統整合，幫助你整理流程、串接工具、<br className="hidden sm:block" />
               減少重複人工作業，讓團隊專注在真正重要的事。
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row gap-4 mb-10 w-full justify-center lg:justify-start">
               <a href="#workflow-check" className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-base transition-all shadow-lg shadow-blue-600/30 w-full sm:w-auto">
                 <Zap className="w-5 h-5 fill-current" /> 開始 1 分鐘流程檢查
               </a>
@@ -33,7 +33,7 @@ export default function HeroSection() {
               </a>
             </div>
             
-            <div className="flex flex-wrap items-center gap-6">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6">
               {[
                 { text: '專注中小企業', icon: CheckCircle2 },
                 { text: '快速導入、見效快', icon: CheckCircle2 },

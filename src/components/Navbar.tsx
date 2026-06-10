@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -17,28 +18,35 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-blue to-brand-teal flex items-center justify-center text-white font-bold text-xl">O</div>
-            <span className="text-2xl font-black text-brand-dark tracking-tight">Optimaks</span>
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between md:justify-start h-20 relative">
+          
+          {/* Logo */}
+          <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 z-10">
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="w-10 h-10 bg-[#0070f3] rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                O
+              </div>
+              <span className="font-black text-2xl text-slate-800 tracking-tight">Optimaks</span>
+            </Link>
           </div>
 
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center space-x-8 ml-auto">
             {navItems.map((item) => (
               <a key={item.label} href={item.href} className="text-sm font-medium text-slate-600 hover:text-brand-blue transition-colors">
                 {item.label}
               </a>
             ))}
-          </nav>
+          </div>
 
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center ml-8">
             <a href="#workflow-check" className="bg-brand-green hover:bg-brand-green-hover text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-brand-green/30 hover:shadow-brand-green/50 hover:-translate-y-0.5">
               開始 1 分鐘流程檢查
             </a>
           </div>
 
-          <div className="lg:hidden flex items-center">
+          <div className="lg:hidden flex items-center ml-auto relative z-20">
             <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 p-2">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

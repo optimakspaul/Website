@@ -66,14 +66,14 @@ export default function PainPointsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
+        <div className="grid grid-cols-2 min-[400px]:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
           {painPoints.map((point, index) => (
-            <div key={index} className="bg-white p-4 md:p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group flex flex-col items-start md:items-start">
-              <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-3 md:mb-4 ${point.bg} ${point.color} group-hover:scale-110 transition-transform`}>
+            <div key={index} className="bg-white p-3 md:p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group flex flex-col items-center text-center md:items-start md:text-left aspect-square md:aspect-auto justify-center md:justify-start">
+              <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-2 md:mb-4 ${point.bg} ${point.color} group-hover:scale-110 transition-transform`}>
                 <point.icon className="w-5 h-5 md:w-6 md:h-6" />
               </div>
-              <h3 className="text-sm md:text-lg font-bold text-slate-800 mb-1.5 md:mb-2">{point.title}</h3>
-              <p className="text-slate-600 text-[11px] md:text-sm leading-snug md:leading-relaxed line-clamp-3 md:line-clamp-none">{point.description}</p>
+              <h3 className="text-[13px] sm:text-sm md:text-lg font-bold text-slate-800 md:mb-2 leading-tight">{point.title}</h3>
+              <p className="hidden md:block text-slate-600 text-sm leading-relaxed">{point.description}</p>
             </div>
           ))}
         </div>
