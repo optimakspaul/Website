@@ -56,7 +56,7 @@ export default function WorkflowCheck() {
   };
 
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden" id="workflow-check">
+    <section className="pt-24 pb-36 md:py-24 bg-slate-50 relative overflow-hidden" id="workflow-check">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-light to-transparent opacity-50"></div>
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

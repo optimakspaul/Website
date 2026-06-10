@@ -30,15 +30,15 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between md:justify-start h-20 relative">
+        <div className="flex items-center justify-between h-20 relative">
           
           {/* Logo */}
-          <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 z-10">
+          <div className="flex items-center shrink-0 z-10">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-[#0070f3] rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+              <div className="w-9 h-9 md:w-10 md:h-10 bg-[#0070f3] rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
                 O
               </div>
-              <span className="font-black text-2xl text-slate-800 tracking-tight">Optimaks</span>
+              <span className="font-black text-xl md:text-2xl text-slate-800 tracking-tight">Optimaks</span>
             </Link>
           </div>
 
