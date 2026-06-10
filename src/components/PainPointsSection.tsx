@@ -66,28 +66,14 @@ export default function PainPointsSection() {
           </p>
         </div>
 
-        {/* Desktop: Grid layout */}
-        <div className="hidden lg:grid grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
           {painPoints.map((point, index) => (
-            <div key={index} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+            <div key={index} className="bg-white p-5 md:p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${point.bg} ${point.color} group-hover:scale-110 transition-transform`}>
                 <point.icon className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-slate-800 mb-2">{point.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{point.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile: Horizontal Scroll */}
-        <div className="lg:hidden -mx-4 px-4 overflow-x-auto pb-8 snap-x snap-mandatory flex gap-4 no-scrollbar">
-          {painPoints.map((point, index) => (
-            <div key={index} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm min-w-[280px] snap-center shrink-0">
-              <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-4 ${point.bg} ${point.color}`}>
-                <point.icon className="w-5 h-5" />
-              </div>
-              <h3 className="text-base font-bold text-slate-800 mb-1">{point.title}</h3>
-              <p className="text-slate-600 text-sm">{point.description}</p>
             </div>
           ))}
         </div>
