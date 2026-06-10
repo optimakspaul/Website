@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Search, GitMerge, Puzzle, Rocket, ChevronDown } from 'lucide-react';
+import React from 'react';
+import { Search, GitMerge, Puzzle, Rocket } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function HowItWorksSection() {
-  const [openIndex, setOpenIndex] = useState<number>(0);
   const t = useTranslations('HowItWorks');
 
   const steps = [
@@ -65,26 +64,18 @@ export default function HowItWorksSection() {
           ))}
         </div>
 
-        {/* Mobile: Accordion */}
+        {/* Mobile: Vertical Cards */}
         <div className="lg:hidden space-y-4">
           {steps.map((step, idx) => (
-            <div key={idx} className="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden">
-              <button 
-                onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
-                className="w-full flex items-center justify-between p-5 text-left"
-              >
-                <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${step.bg} ${step.color}`}>
-                    <step.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-bold text-slate-800">{step.title}</h3>
-                </div>
-                <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${openIndex === idx ? 'rotate-180' : ''}`} />
-              </button>
-              <div className={`overflow-hidden transition-all duration-300 ${openIndex === idx ? 'max-h-40 border-t border-slate-100' : 'max-h-0'}`}>
-                <div className="p-5 pt-4 text-slate-600 text-sm leading-relaxed">
+            <div key={idx} className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex gap-4 items-start text-left shadow-sm">
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${step.bg} ${step.color}`}>
+                <step.icon className="w-7 h-7" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-slate-800 mb-2">{step.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
                   {step.description}
-                </div>
+                </p>
               </div>
             </div>
           ))}
