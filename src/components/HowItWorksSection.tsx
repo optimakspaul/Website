@@ -2,50 +2,52 @@
 
 import React, { useState } from 'react';
 import { Search, GitMerge, Puzzle, Rocket, ChevronDown } from 'lucide-react';
-
-const steps = [
-  {
-    icon: Search,
-    title: '1. 了解現況',
-    description: '先了解你現在的工作流程、使用工具、團隊分工與最常卡住的地方。',
-    color: 'text-blue-500',
-    bg: 'bg-blue-50',
-  },
-  {
-    icon: GitMerge,
-    title: '2. 梳理流程',
-    description: '把混亂的作業步驟整理成清楚流程，找出可以簡化、標準化或自動化的地方。',
-    color: 'text-brand-teal',
-    bg: 'bg-teal-50',
-  },
-  {
-    icon: Puzzle,
-    title: '3. 整合工具',
-    description: '依需求整合 AI、n8n、表單、CRM、Email、Calendar、Dashboard 或既有工具。',
-    color: 'text-purple-500',
-    bg: 'bg-purple-50',
-  },
-  {
-    icon: Rocket,
-    title: '4. 導入落地',
-    description: '協助團隊真的用起來，讓流程可以被追蹤、交接與持續優化。',
-    color: 'text-brand-green',
-    bg: 'bg-green-50',
-  }
-];
+import { useTranslations } from 'next-intl';
 
 export default function HowItWorksSection() {
   const [openIndex, setOpenIndex] = useState<number>(0);
+  const t = useTranslations('HowItWorks');
+
+  const steps = [
+    {
+      icon: Search,
+      title: t('step_1_title'),
+      description: t('step_1_desc'),
+      color: 'text-blue-500',
+      bg: 'bg-blue-50',
+    },
+    {
+      icon: GitMerge,
+      title: t('step_2_title'),
+      description: t('step_2_desc'),
+      color: 'text-brand-teal',
+      bg: 'bg-teal-50',
+    },
+    {
+      icon: Puzzle,
+      title: t('step_3_title'),
+      description: t('step_3_desc'),
+      color: 'text-purple-500',
+      bg: 'bg-purple-50',
+    },
+    {
+      icon: Rocket,
+      title: t('step_4_title'),
+      description: t('step_4_desc'),
+      color: 'text-brand-green',
+      bg: 'bg-green-50',
+    }
+  ];
 
   return (
     <section className="py-24 bg-white" id="how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-black text-brand-dark mb-4">
-            我們怎麼做
+            {t('section_title')}
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            我們不只是賣軟體，我們是你的流程優化夥伴，陪伴你從梳理痛點到系統落地。
+            {t('section_subtitle')}
           </p>
         </div>
 

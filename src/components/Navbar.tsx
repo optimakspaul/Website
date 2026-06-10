@@ -2,18 +2,29 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
+import { usePathname, useRouter } from '@/i18n/routing';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const t = useTranslations('Navbar');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const nextLocale = e.target.value;
+    router.replace(pathname, { locale: nextLocale });
+  };
 
   const navItems = [
-    { label: '關於我們', href: '#' },
-    { label: '我們怎麼做', href: '#how-it-works' },
-    { label: '服務內容', href: '#services' },
-    { label: '適合的企業', href: '#industries' },
-    { label: '成功案例', href: '#' },
-    { label: '資源', href: '#' },
+    { label: t('about'), href: '#' },
+    { label: t('how'), href: '#how-it-works' },
+    { label: t('services'), href: '#services' },
+    { label: t('who'), href: '#industries' },
+    { label: t('cases'), href: '#' },
+    { label: t('resources'), href: '#' },
   ];
 
   return (
@@ -40,13 +51,37 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center ml-8">
+          <div className="hidden lg:flex items-center ml-8 gap-4">
+            <div className="flex items-center gap-1.5 bg-slate-100/50 px-2.5 py-1.5 rounded-lg border border-slate-200/60">
+              <Globe className="w-4 h-4 text-slate-500" />
+              <select 
+                value={locale} 
+                onChange={handleLanguageChange}
+                className="bg-transparent text-sm font-medium text-slate-600 outline-none cursor-pointer"
+              >
+                <option value="zh-TW">繁體中文</option>
+                <option value="zh-CN">简体中文</option>
+                <option value="en">English</option>
+              </select>
+            </div>
             <a href="#workflow-check" className="bg-brand-green hover:bg-brand-green-hover text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-brand-green/30 hover:shadow-brand-green/50 hover:-translate-y-0.5">
-              開始 1 分鐘流程檢查
+              {t('cta')}
             </a>
           </div>
 
-          <div className="lg:hidden flex items-center ml-auto relative z-20">
+          <div className="lg:hidden flex items-center ml-auto gap-3 relative z-20">
+            <div className="flex items-center gap-1 bg-slate-100/50 px-2 py-1.5 rounded-lg border border-slate-200/60">
+              <Globe className="w-4 h-4 text-slate-500" />
+              <select 
+                value={locale} 
+                onChange={handleLanguageChange}
+                className="bg-transparent text-xs font-medium text-slate-600 outline-none cursor-pointer"
+              >
+                <option value="zh-TW">繁中</option>
+                <option value="zh-CN">简中</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
             <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 p-2">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -65,7 +100,7 @@ export default function Navbar() {
           </nav>
           <div className="pt-4 mt-4 border-t border-slate-100">
             <a href="#workflow-check" onClick={() => setIsOpen(false)} className="block w-full text-center bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-full font-semibold transition-all shadow-md">
-              開始 1 分鐘流程檢查
+              {t('cta')}
             </a>
           </div>
         </div>
