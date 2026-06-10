@@ -101,53 +101,52 @@ export default function WorkflowCheck() {
               </div>
 
               {/* Question */}
-              <div className="mb-6 relative">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-5">
-                  <span className="text-brand-blue mr-2">Q{currentStep + 1}.</span> 
-                  {steps[currentStep].title}
+              <div className="mb-6">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-5 flex items-center justify-between">
+                  <div>
+                    <span className="text-brand-blue mr-2">Q{currentStep + 1}.</span> 
+                    {steps[currentStep].title}
+                  </div>
+                  <span className="text-xs font-normal text-slate-400 bg-slate-100 px-2 py-1 rounded-full whitespace-nowrap ml-2 shrink-0">
+                    {currentStep === 0 ? '單選' : '可複選'}
+                  </span>
                 </h3>
                 
-                <div className="relative z-20">
-                  <button 
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="w-full text-left px-4 py-3.5 rounded-xl border-2 border-slate-200 bg-white hover:border-brand-blue/50 transition-colors flex justify-between items-center shadow-sm"
-                  >
-                    <span className="text-slate-700 font-medium truncate pr-4 text-sm md:text-base">
-                      {(selections[currentStep] || []).length > 0 
-                        ? (selections[currentStep] || []).join(', ') 
-                        : '請點擊選擇 (最多可選 3 項)...'}
-                    </span>
-                    <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  
-                  {dropdownOpen && (
-                    <>
-                      <div className="fixed inset-0 z-10" onClick={() => setDropdownOpen(false)}></div>
-                      <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-100 shadow-xl shadow-slate-200/50 rounded-xl z-20 max-h-[40vh] overflow-y-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-slate-200 [&::-webkit-scrollbar-thumb]:rounded-full">
-                        {steps[currentStep].options.map(option => {
-                          const isSelected = (selections[currentStep] || []).includes(option);
-                          return (
-                            <button
-                              key={option}
-                              onClick={() => toggleSelection(currentStep, option)}
-                              className={`w-full text-left px-4 py-3.5 flex items-center justify-between border-b border-slate-50 last:border-0 transition-colors
-                                ${isSelected ? 'bg-blue-50/50' : 'hover:bg-slate-50'}
-                              `}
-                            >
-                              <span className={`font-medium text-sm md:text-base ${isSelected ? 'text-brand-blue' : 'text-slate-600'}`}>
-                                {option}
-                              </span>
-                              <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors
-                                ${isSelected ? 'bg-brand-blue border-brand-blue' : 'border-slate-300'}
-                              `}>
-                                {isSelected && <Check className="w-3.5 h-3.5 text-white" />}
-                              </div>
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </>
-                  )}
+                <div className="max-h-[35vh] md:max-h-none overflow-y-auto pr-1 -mr-1 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-slate-200 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 pb-1">
+                  {steps[currentStep].options.map(option => {
+                    const isSelected = (selections[currentStep] || []).includes(option);
+                    return (
+                      <button
+                        key={option}
+                        onClick={() => {
+                          toggleSelection(currentStep, option);
+                          // Auto advance for step 1 (single choice)
+                          if (currentStep === 0) {
+                            setTimeout(() => {
+                              handleNext();
+                            }, 300); // Small delay so they see the checkmark
+                          }
+                        }}
+                        className={`text-left px-3 py-3 md:px-4 md:py-3.5 rounded-xl border-2 transition-all duration-200 font-medium text-sm md:text-base flex flex-col justify-center min-h-[4rem]
+                          ${isSelected 
+                            ? 'border-brand-blue bg-blue-50 text-brand-blue shadow-sm ring-1 ring-brand-blue/30' 
+                            : 'border-slate-100 hover:border-slate-300 hover:bg-slate-50 text-slate-600'
+                          }
+                        `}
+                      >
+                        <div className="flex items-center justify-between w-full gap-2">
+                          <span className="leading-snug">{option}</span>
+                          <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 transition-colors
+                            ${isSelected ? 'bg-brand-blue border-brand-blue' : 'border-slate-300'}
+                          `}>
+                            {isSelected && <Check className="w-3.5 h-3.5 text-white" />}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                  </div>
                 </div>
               </div>
 
