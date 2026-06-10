@@ -62,22 +62,25 @@ export default function HeroSection() {
                 {/* Pipeline Container */}
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 w-full">
                   
-                  {/* Step 1: Messy Inputs */}
-                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-56 relative group hover:-translate-y-1 transition-transform">
-                    <div className="text-sm font-bold text-slate-700 mb-4 text-center border-b border-slate-100 pb-3">散落的人工作業</div>
-                    <div className="flex flex-col gap-3">
-                      <div className="flex items-center gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                        <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center shrink-0"><MessageCircle className="w-4 h-4 text-green-600" /></div>
-                        <span className="text-xs font-bold text-slate-600">WhatsApp 詢問</span>
-                      </div>
-                      <div className="flex items-center gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center shrink-0"><FileText className="w-4 h-4 text-purple-600" /></div>
-                        <span className="text-xs font-bold text-slate-600">紙本 / 散落表單</span>
-                      </div>
-                      <div className="flex items-center gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                        <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center shrink-0"><Users className="w-4 h-4 text-orange-600" /></div>
-                        <span className="text-xs font-bold text-slate-600">跨部門反覆溝通</span>
-                      </div>
+                  {/* Step 1: Messy Inputs (9 Pain Points) */}
+                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-64 relative group hover:-translate-y-1 transition-transform">
+                    <div className="text-sm font-bold text-slate-700 mb-4 text-center border-b border-slate-100 pb-3">企業常見的流程卡點</div>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {[
+                        { text: '太多 Paperwork', color: 'text-blue-600 bg-blue-50 border-blue-100' },
+                        { text: '詢價容易漏', color: 'text-orange-600 bg-orange-50 border-orange-100' },
+                        { text: '報價太慢', color: 'text-red-600 bg-red-50 border-red-100' },
+                        { text: '排程很亂', color: 'text-purple-600 bg-purple-50 border-purple-100' },
+                        { text: '工單追蹤困難', color: 'text-teal-600 bg-teal-50 border-teal-100' },
+                        { text: '付款追蹤困難', color: 'text-green-600 bg-green-50 border-green-100' },
+                        { text: '資料太分散', color: 'text-indigo-600 bg-indigo-50 border-indigo-100' },
+                        { text: '人為輸入錯誤', color: 'text-amber-600 bg-amber-50 border-amber-100' },
+                        { text: '跨部門溝通斷層', color: 'text-rose-600 bg-rose-50 border-rose-100' },
+                      ].map((item, i) => (
+                        <span key={i} className={`text-[10px] font-bold px-2 py-1 rounded-md border ${item.color}`}>
+                          {item.text}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
@@ -102,11 +105,24 @@ export default function HeroSection() {
                       <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-teal rounded-2xl flex items-center justify-center mb-5 shadow-lg text-white">
                         <Settings className="w-8 h-8 animate-[spin_4s_linear_infinite]" />
                       </div>
-                      <div className="text-xl md:text-2xl font-black text-slate-800 mb-3 tracking-tight">Optimaks 流程梳理</div>
-                      <div className="flex flex-wrap justify-center gap-2">
-                        <span className="bg-slate-100 text-slate-600 border border-slate-200 px-2.5 py-1 rounded-md text-[10px] font-bold">釐清痛點</span>
-                        <span className="bg-orange-50 text-orange-600 border border-orange-100 px-2.5 py-1 rounded-md text-[10px] font-bold">n8n 自動化</span>
-                        <span className="bg-teal-50 text-teal-600 border border-teal-100 px-2.5 py-1 rounded-md text-[10px] font-bold">AI 整合</span>
+                      <div className="text-xl md:text-2xl font-black text-slate-800 mb-4 tracking-tight">Optimaks 流程梳理</div>
+                      <div className="flex flex-col gap-2 w-full">
+                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                          <CheckCircle2 className="w-4 h-4 text-brand-blue" />
+                          <span className="text-xs font-bold text-slate-600">診斷與梳理痛點</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                          <Database className="w-4 h-4 text-orange-500" />
+                          <span className="text-xs font-bold text-slate-600">跨系統 API 串接</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                          <Zap className="w-4 h-4 text-teal-500" />
+                          <span className="text-xs font-bold text-slate-600">AI 智能輔助決策</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                          <Settings className="w-4 h-4 text-indigo-500" />
+                          <span className="text-xs font-bold text-slate-600">零時差自動化執行</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -126,20 +142,20 @@ export default function HeroSection() {
                   </div>
 
                   {/* Step 3: Streamlined Output */}
-                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-56 relative group hover:-translate-y-1 transition-transform">
-                    <div className="text-sm font-bold text-brand-blue mb-4 text-center border-b border-slate-100 pb-3">高效自動化運作</div>
+                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-64 relative group hover:-translate-y-1 transition-transform">
+                    <div className="text-sm font-bold text-brand-blue mb-4 text-center border-b border-slate-100 pb-3">導入後的具體成效</div>
                     <div className="flex flex-col gap-3">
-                      <div className="flex items-center gap-3 bg-blue-50/50 p-2.5 rounded-xl border border-blue-100">
-                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center shrink-0"><Database className="w-4 h-4 text-blue-600" /></div>
-                        <span className="text-xs font-bold text-blue-900">單一事實資料庫</span>
+                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-500/30 flex items-center gap-3">
+                        <div className="bg-white/20 p-2 rounded-lg shrink-0"><Zap className="w-5 h-5 text-white" /></div>
+                        <div className="font-bold text-sm tracking-wide">效率激增，秒速完成</div>
                       </div>
-                      <div className="flex items-center gap-3 bg-teal-50/50 p-2.5 rounded-xl border border-teal-100">
-                        <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center shrink-0"><BarChart3 className="w-4 h-4 text-teal-600" /></div>
-                        <span className="text-xs font-bold text-teal-900">即時決策儀表板</span>
+                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-3 rounded-xl shadow-lg shadow-teal-500/30 flex items-center gap-3">
+                        <div className="bg-white/20 p-2 rounded-lg shrink-0"><CheckCircle2 className="w-5 h-5 text-white" /></div>
+                        <div className="font-bold text-sm tracking-wide">告別重複的手工作業</div>
                       </div>
-                      <div className="flex items-center gap-3 bg-green-50/50 p-2.5 rounded-xl border border-green-100">
-                        <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center shrink-0"><Zap className="w-4 h-4 text-green-600" /></div>
-                        <span className="text-xs font-bold text-green-900">無縫自動化排程</span>
+                      <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white p-3 rounded-xl shadow-lg shadow-indigo-500/30 flex items-center gap-3">
+                        <div className="bg-white/20 p-2 rounded-lg shrink-0"><BarChart3 className="w-5 h-5 text-white" /></div>
+                        <div className="font-bold text-sm tracking-wide">資料集中，決策清晰</div>
                       </div>
                     </div>
                   </div>
