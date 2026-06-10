@@ -64,7 +64,7 @@ export default function HeroSection() {
                   
                   {/* Step 1: Messy Inputs (9 Pain Points) */}
                   <div className="bg-white p-4 md:p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full xl:w-48 relative group hover:-translate-y-1 transition-transform">
-                    <div className="text-xs font-bold text-slate-700 mb-3 text-center border-b border-slate-100 pb-2">常見流程卡點</div>
+                    <div className="text-xs font-bold text-slate-700 mb-3 text-center border-b border-slate-100 pb-2 whitespace-nowrap">常見流程卡點</div>
                     <div className="flex flex-wrap gap-1.5 justify-center">
                       {[
                         { text: '紙本滿天飛', color: 'text-blue-600 bg-blue-50 border-blue-100' },
@@ -139,7 +139,7 @@ export default function HeroSection() {
 
                   {/* Step 3: Streamlined Output */}
                   <div className="bg-white p-4 md:p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full xl:w-48 relative group hover:-translate-y-1 transition-transform">
-                    <div className="text-xs font-bold text-brand-blue mb-3 text-center border-b border-slate-100 pb-2">導入成效</div>
+                    <div className="text-xs font-bold text-brand-blue mb-3 text-center border-b border-slate-100 pb-2 whitespace-nowrap">導入成效</div>
                     <div className="flex flex-col gap-2">
                       <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-2.5 rounded-xl shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
                         <Zap className="w-4 h-4 text-white shrink-0" />
