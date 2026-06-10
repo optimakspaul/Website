@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileStack, BellOff, Clock, CalendarX2, SearchX, Receipt, DatabaseZap } from 'lucide-react';
+import { FileStack, BellOff, Clock, CalendarX2, SearchX, Receipt, DatabaseZap, AlertTriangle, Users } from 'lucide-react';
 
 const painPoints = [
   {
@@ -51,6 +51,20 @@ const painPoints = [
     color: 'text-indigo-500',
     bg: 'bg-indigo-50',
   },
+  {
+    icon: AlertTriangle,
+    title: '人為輸入錯誤',
+    description: '同一份資料重複登打，容易打錯或遺漏。',
+    color: 'text-amber-500',
+    bg: 'bg-amber-50',
+  },
+  {
+    icon: Users,
+    title: '跨部門溝通斷層',
+    description: '業務與後勤資訊不同步，交接常常漏東漏西。',
+    color: 'text-rose-500',
+    bg: 'bg-rose-50',
+  },
 ];
 
 export default function PainPointsSection() {
@@ -72,7 +86,7 @@ export default function PainPointsSection() {
               <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 md:mb-5 ${point.bg} ${point.color} group-hover:scale-110 transition-transform shadow-sm`}>
                 <point.icon className="w-7 h-7 md:w-8 md:h-8" />
               </div>
-              <h3 className="text-[13px] sm:text-sm md:text-lg font-bold text-slate-800 md:mb-2 leading-tight">{point.title}</h3>
+              <h3 className="text-[15px] sm:text-base md:text-lg font-bold text-slate-800 md:mb-2 leading-tight">{point.title}</h3>
               <p className="hidden md:block text-slate-600 text-sm leading-relaxed">{point.description}</p>
             </div>
           ))}
