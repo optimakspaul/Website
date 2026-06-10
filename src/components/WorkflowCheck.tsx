@@ -173,11 +173,10 @@ export default function WorkflowCheck() {
               <div className="max-w-md mx-auto">
                 <p className="font-bold text-slate-800 mb-4">想收到初步建議？留下聯絡方式。</p>
                 <form className="flex flex-col gap-3" onSubmit={(e) => { e.preventDefault(); console.log('Form submitted'); }}>
-                  <div className="grid grid-cols-2 gap-3">
-                    <input type="text" placeholder="稱呼 (Name)" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                    <input type="tel" placeholder="聯絡電話 (Phone)" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                  </div>
-                  <input type="email" placeholder="Email 或 WhatsApp 號碼" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                  <input type="text" placeholder="稱呼 (Name)" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                  <input type="text" placeholder="公司 (Company)" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                  <input type="tel" placeholder="聯絡電話 (Phone)" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                  <input type="email" placeholder="Email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
                   <button type="submit" className="w-full bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-green/20">
                     免費獲取專屬建議報告 <ArrowRight className="w-4 h-4" />
                   </button>
