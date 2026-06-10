@@ -60,76 +60,86 @@ export default function HeroSection() {
                 </div>
 
                 {/* Pipeline Container */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-4 lg:gap-8 w-full">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 w-full">
                   
                   {/* Step 1: Messy Inputs */}
-                  <div className="bg-white p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full md:w-auto relative group hover:-translate-y-1 transition-transform">
-                    <div className="text-xs font-bold text-slate-400 mb-4 text-center">既有分散工具</div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="flex flex-col items-center gap-1">
-                        <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-500"><MessageCircle className="w-5 h-5" /></div>
-                        <span className="text-[10px] font-bold text-slate-500">WhatsApp</span>
+                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-56 relative group hover:-translate-y-1 transition-transform">
+                    <div className="text-sm font-bold text-slate-700 mb-4 text-center border-b border-slate-100 pb-3">散落的人工作業</div>
+                    <div className="flex flex-col gap-3">
+                      <div className="flex items-center gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center shrink-0"><MessageCircle className="w-4 h-4 text-green-600" /></div>
+                        <span className="text-xs font-bold text-slate-600">WhatsApp 詢問</span>
                       </div>
-                      <div className="flex flex-col items-center gap-1">
-                        <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-red-500"><Mail className="w-5 h-5" /></div>
-                        <span className="text-[10px] font-bold text-slate-500">Gmail</span>
+                      <div className="flex items-center gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center shrink-0"><FileText className="w-4 h-4 text-purple-600" /></div>
+                        <span className="text-xs font-bold text-slate-600">紙本 / 散落表單</span>
                       </div>
-                      <div className="flex flex-col items-center gap-1">
-                        <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-500"><FileText className="w-5 h-5" /></div>
-                        <span className="text-[10px] font-bold text-slate-500">表單</span>
-                      </div>
-                      <div className="flex flex-col items-center gap-1">
-                        <div className="w-10 h-10 bg-yellow-50 rounded-lg flex items-center justify-center text-yellow-600"><Calendar className="w-5 h-5" /></div>
-                        <span className="text-[10px] font-bold text-slate-500">Calendar</span>
+                      <div className="flex items-center gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center shrink-0"><Users className="w-4 h-4 text-orange-600" /></div>
+                        <span className="text-xs font-bold text-slate-600">跨部門反覆溝通</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Arrow 1 */}
-                  <div className="text-slate-300 md:-rotate-90 lg:rotate-0 flex justify-center md:block">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
+                  <div className="text-slate-300 lg:-rotate-90 lg:hidden flex justify-center py-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rotate-90 animate-pulse">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                  <div className="hidden lg:block text-slate-300">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </div>
 
-                  {/* Step 2: Automation Engine */}
-                  <div className="relative w-full md:w-auto">
-                    <div className="absolute -inset-4 bg-orange-500/20 rounded-[2.5rem] blur-xl animate-pulse"></div>
-                    <div className="bg-white border-2 border-orange-200 p-6 md:p-8 rounded-[2rem] shadow-2xl shadow-orange-500/20 relative z-10 flex flex-col items-center justify-center group hover:scale-105 transition-transform cursor-default w-full">
-                      <div className="text-4xl md:text-5xl font-black text-orange-500 mb-2 tracking-tighter">n8n</div>
-                      <div className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
-                        <Zap className="w-3 h-3 fill-current" /> 自動化大腦
+                  {/* Step 2: Optimization Engine */}
+                  <div className="relative w-full lg:w-auto">
+                    <div className="absolute -inset-4 bg-brand-blue/10 rounded-[2.5rem] blur-xl animate-pulse"></div>
+                    <div className="bg-white border-2 border-brand-blue/20 p-6 md:p-8 rounded-[2rem] shadow-2xl shadow-brand-blue/10 relative z-10 flex flex-col items-center justify-center group hover:scale-105 transition-transform cursor-default w-full">
+                      <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-teal rounded-2xl flex items-center justify-center mb-5 shadow-lg text-white">
+                        <Settings className="w-8 h-8 animate-[spin_4s_linear_infinite]" />
+                      </div>
+                      <div className="text-xl md:text-2xl font-black text-slate-800 mb-3 tracking-tight">Optimaks 流程梳理</div>
+                      <div className="flex flex-wrap justify-center gap-2">
+                        <span className="bg-slate-100 text-slate-600 border border-slate-200 px-2.5 py-1 rounded-md text-[10px] font-bold">釐清痛點</span>
+                        <span className="bg-orange-50 text-orange-600 border border-orange-100 px-2.5 py-1 rounded-md text-[10px] font-bold">n8n 自動化</span>
+                        <span className="bg-teal-50 text-teal-600 border border-teal-100 px-2.5 py-1 rounded-md text-[10px] font-bold">AI 整合</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Arrow 2 */}
-                  <div className="text-slate-300 md:-rotate-90 lg:rotate-0 flex justify-center md:block">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse delay-75">
+                  <div className="text-slate-300 lg:-rotate-90 lg:hidden flex justify-center py-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rotate-90 animate-pulse delay-75">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                  <div className="hidden lg:block text-slate-300">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse delay-75">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </div>
 
                   {/* Step 3: Streamlined Output */}
-                  <div className="flex flex-col gap-4 w-full md:w-auto">
-                    <div className="bg-white p-4 rounded-2xl shadow-xl shadow-blue-500/10 border border-blue-100 flex items-center gap-4 group hover:-translate-y-1 transition-transform">
-                      <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
-                        <Database className="w-6 h-6" />
+                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-56 relative group hover:-translate-y-1 transition-transform">
+                    <div className="text-sm font-bold text-brand-blue mb-4 text-center border-b border-slate-100 pb-3">高效自動化運作</div>
+                    <div className="flex flex-col gap-3">
+                      <div className="flex items-center gap-3 bg-blue-50/50 p-2.5 rounded-xl border border-blue-100">
+                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center shrink-0"><Database className="w-4 h-4 text-blue-600" /></div>
+                        <span className="text-xs font-bold text-blue-900">單一事實資料庫</span>
                       </div>
-                      <div>
-                        <div className="text-[10px] font-bold text-slate-400">Step 1</div>
-                        <div className="font-bold text-slate-800 text-sm">集中資料庫</div>
+                      <div className="flex items-center gap-3 bg-teal-50/50 p-2.5 rounded-xl border border-teal-100">
+                        <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center shrink-0"><BarChart3 className="w-4 h-4 text-teal-600" /></div>
+                        <span className="text-xs font-bold text-teal-900">即時決策儀表板</span>
                       </div>
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl shadow-xl shadow-teal-500/10 border border-teal-100 flex items-center gap-4 group hover:-translate-y-1 transition-transform">
-                      <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600">
-                        <BarChart3 className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-bold text-slate-400">Step 2</div>
-                        <div className="font-bold text-slate-800 text-sm">分析儀表板</div>
+                      <div className="flex items-center gap-3 bg-green-50/50 p-2.5 rounded-xl border border-green-100">
+                        <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center shrink-0"><Zap className="w-4 h-4 text-green-600" /></div>
+                        <span className="text-xs font-bold text-green-900">無縫自動化排程</span>
                       </div>
                     </div>
                   </div>
