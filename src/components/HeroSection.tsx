@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, ChevronRight, CheckCircle2, MessageCircle, FileText, Database, BarChart3, Settings, Users, PieChart, LineChart } from 'lucide-react';
+import { Zap, ChevronRight, CheckCircle2, MessageCircle, FileText, Database, BarChart3, Settings, Users, PieChart, LineChart, Mail, Calendar } from 'lucide-react';
 
 export default function HeroSection() {
   return (
