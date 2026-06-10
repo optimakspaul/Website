@@ -60,24 +60,24 @@ export default function HeroSection() {
                 </div>
 
                 {/* Pipeline Container */}
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 w-full">
+                <div className="flex flex-col lg:flex-row items-start justify-center gap-4 lg:gap-6 w-full">
                   
                   {/* Step 1: Messy Inputs (9 Pain Points) */}
-                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-64 relative group hover:-translate-y-1 transition-transform">
-                    <div className="text-sm font-bold text-slate-700 mb-4 text-center border-b border-slate-100 pb-3">企業常見的流程卡點</div>
+                  <div className="bg-white p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-48 relative group hover:-translate-y-1 transition-transform">
+                    <div className="text-sm font-bold text-slate-700 mb-4 text-center border-b border-slate-100 pb-3">常見流程卡點</div>
                     <div className="flex flex-wrap gap-2 justify-center">
                       {[
-                        { text: '太多 Paperwork', color: 'text-blue-600 bg-blue-50 border-blue-100' },
-                        { text: '詢價容易漏', color: 'text-orange-600 bg-orange-50 border-orange-100' },
+                        { text: '紙本滿天飛', color: 'text-blue-600 bg-blue-50 border-blue-100' },
+                        { text: '容易漏單', color: 'text-orange-600 bg-orange-50 border-orange-100' },
                         { text: '報價太慢', color: 'text-red-600 bg-red-50 border-red-100' },
-                        { text: '排程很亂', color: 'text-purple-600 bg-purple-50 border-purple-100' },
-                        { text: '工單追蹤困難', color: 'text-teal-600 bg-teal-50 border-teal-100' },
-                        { text: '付款追蹤困難', color: 'text-green-600 bg-green-50 border-green-100' },
-                        { text: '資料太分散', color: 'text-indigo-600 bg-indigo-50 border-indigo-100' },
-                        { text: '人為輸入錯誤', color: 'text-amber-600 bg-amber-50 border-amber-100' },
-                        { text: '跨部門溝通斷層', color: 'text-rose-600 bg-rose-50 border-rose-100' },
+                        { text: '排程混亂', color: 'text-purple-600 bg-purple-50 border-purple-100' },
+                        { text: '進度難追', color: 'text-teal-600 bg-teal-50 border-teal-100' },
+                        { text: '請款延宕', color: 'text-green-600 bg-green-50 border-green-100' },
+                        { text: '資料分散', color: 'text-indigo-600 bg-indigo-50 border-indigo-100' },
+                        { text: '輸入錯誤', color: 'text-amber-600 bg-amber-50 border-amber-100' },
+                        { text: '溝通斷層', color: 'text-rose-600 bg-rose-50 border-rose-100' },
                       ].map((item, i) => (
-                        <span key={i} className={`text-[10px] font-bold px-2 py-1 rounded-md border ${item.color}`}>
+                        <span key={i} className={`text-[11px] font-bold px-2 py-1 rounded-md border ${item.color}`}>
                           {item.text}
                         </span>
                       ))}
@@ -91,7 +91,7 @@ export default function HeroSection() {
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </div>
-                  <div className="hidden lg:block text-slate-300">
+                  <div className="hidden lg:block text-slate-300 self-center">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
@@ -99,29 +99,25 @@ export default function HeroSection() {
                   </div>
 
                   {/* Step 2: Optimization Engine */}
-                  <div className="relative w-full lg:w-auto">
+                  <div className="relative w-full lg:w-56">
                     <div className="absolute -inset-4 bg-brand-blue/10 rounded-[2.5rem] blur-xl animate-pulse"></div>
-                    <div className="bg-white border-2 border-brand-blue/20 p-6 md:p-8 rounded-[2rem] shadow-2xl shadow-brand-blue/10 relative z-10 flex flex-col items-center justify-center group hover:scale-105 transition-transform cursor-default w-full">
+                    <div className="bg-white border-2 border-brand-blue/20 p-6 rounded-[2rem] shadow-2xl shadow-brand-blue/10 relative z-10 flex flex-col items-center justify-center group hover:scale-105 transition-transform cursor-default w-full">
                       <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-teal rounded-2xl flex items-center justify-center mb-5 shadow-lg text-white">
                         <Settings className="w-8 h-8 animate-[spin_4s_linear_infinite]" />
                       </div>
-                      <div className="text-xl md:text-2xl font-black text-slate-800 mb-4 tracking-tight">Optimaks 流程梳理</div>
+                      <div className="text-xl font-black text-slate-800 mb-4 tracking-tight">Optimaks<br/>流程梳理</div>
                       <div className="flex flex-col gap-2 w-full">
-                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 justify-center">
                           <CheckCircle2 className="w-4 h-4 text-brand-blue" />
-                          <span className="text-xs font-bold text-slate-600">診斷與梳理痛點</span>
+                          <span className="text-xs font-bold text-slate-600">流程梳理</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 justify-center">
                           <Database className="w-4 h-4 text-orange-500" />
-                          <span className="text-xs font-bold text-slate-600">跨系統 API 串接</span>
+                          <span className="text-xs font-bold text-slate-600">系統串接</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 justify-center">
                           <Zap className="w-4 h-4 text-teal-500" />
-                          <span className="text-xs font-bold text-slate-600">AI 智能輔助決策</span>
-                        </div>
-                        <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
-                          <Settings className="w-4 h-4 text-indigo-500" />
-                          <span className="text-xs font-bold text-slate-600">零時差自動化執行</span>
+                          <span className="text-xs font-bold text-slate-600">AI 協作</span>
                         </div>
                       </div>
                     </div>
@@ -134,7 +130,7 @@ export default function HeroSection() {
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </div>
-                  <div className="hidden lg:block text-slate-300">
+                  <div className="hidden lg:block text-slate-300 self-center">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse delay-75">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
@@ -142,20 +138,20 @@ export default function HeroSection() {
                   </div>
 
                   {/* Step 3: Streamlined Output */}
-                  <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-64 relative group hover:-translate-y-1 transition-transform">
-                    <div className="text-sm font-bold text-brand-blue mb-4 text-center border-b border-slate-100 pb-3">導入後的具體成效</div>
+                  <div className="bg-white p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 w-full lg:w-48 relative group hover:-translate-y-1 transition-transform">
+                    <div className="text-sm font-bold text-brand-blue mb-4 text-center border-b border-slate-100 pb-3">導入成效</div>
                     <div className="flex flex-col gap-3">
-                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-500/30 flex items-center gap-3">
-                        <div className="bg-white/20 p-2 rounded-lg shrink-0"><Zap className="w-5 h-5 text-white" /></div>
-                        <div className="font-bold text-sm tracking-wide">效率激增，秒速完成</div>
+                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
+                        <Zap className="w-4 h-4 text-white" />
+                        <div className="font-bold text-sm">效率飆升</div>
                       </div>
-                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-3 rounded-xl shadow-lg shadow-teal-500/30 flex items-center gap-3">
-                        <div className="bg-white/20 p-2 rounded-lg shrink-0"><CheckCircle2 className="w-5 h-5 text-white" /></div>
-                        <div className="font-bold text-sm tracking-wide">告別重複的手工作業</div>
+                      <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-3 rounded-xl shadow-lg shadow-teal-500/30 flex items-center justify-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-white" />
+                        <div className="font-bold text-sm">零重複做工</div>
                       </div>
-                      <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white p-3 rounded-xl shadow-lg shadow-indigo-500/30 flex items-center gap-3">
-                        <div className="bg-white/20 p-2 rounded-lg shrink-0"><BarChart3 className="w-5 h-5 text-white" /></div>
-                        <div className="font-bold text-sm tracking-wide">資料集中，決策清晰</div>
+                      <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white p-3 rounded-xl shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2">
+                        <BarChart3 className="w-4 h-4 text-white" />
+                        <div className="font-bold text-sm">決策更清晰</div>
                       </div>
                     </div>
                   </div>
