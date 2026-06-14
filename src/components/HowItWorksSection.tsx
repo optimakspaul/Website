@@ -41,11 +41,11 @@ export default function HowItWorksSection() {
   return (
     <section className="py-24 bg-white" id="how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-black text-brand-dark mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-[1.75rem] md:text-4xl font-black text-brand-dark mb-4 leading-tight">
             {t('section_title')}
           </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+          <p className="text-[15px] md:text-lg text-slate-500 max-w-2xl mx-auto">
             {t('section_subtitle')}
           </p>
         </div>
@@ -65,15 +65,15 @@ export default function HowItWorksSection() {
         </div>
 
         {/* Mobile: Vertical Cards */}
-        <div className="lg:hidden space-y-4">
+        <div className="lg:hidden space-y-3 md:space-y-4">
           {steps.map((step, idx) => (
-            <div key={idx} className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex gap-4 items-start text-left shadow-sm">
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${step.bg} ${step.color}`}>
-                <step.icon className="w-7 h-7" />
+            <div key={idx} className="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-100 flex gap-4 items-start text-left shadow-sm">
+              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center shrink-0 ${step.bg} ${step.color}`}>
+                <step.icon className="w-6 h-6 md:w-7 md:h-7" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-slate-800 mb-2">{step.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <h3 className="font-bold text-base md:text-lg text-slate-800 mb-1.5 md:mb-2">{step.title}</h3>
+                <p className="text-slate-600 text-[13px] md:text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>

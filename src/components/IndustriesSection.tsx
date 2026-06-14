@@ -27,18 +27,18 @@ export default function IndustriesSection() {
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           
           <div className="w-full lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-black text-brand-dark mb-6">
+            <h2 className="text-[1.75rem] md:text-4xl font-black text-brand-dark mb-4 md:mb-6 leading-tight">
               {t('section_title')}
             </h2>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+            <p className="text-[15px] md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">
               {t('section_subtitle')}
             </p>
             
             <div className="space-y-4 mb-8">
               {conditions.map((condition, idx) => (
-                <div key={idx} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                  <CheckCircle2 className="w-6 h-6 text-brand-green shrink-0 mt-0.5" />
-                  <p className="text-slate-700 font-medium">{condition}</p>
+                <div key={idx} className="flex items-start gap-3 bg-slate-50 p-3 md:p-4 rounded-xl border border-slate-100">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-brand-green shrink-0 mt-0.5" />
+                  <p className="text-[15px] md:text-base text-slate-700 font-medium leading-snug">{condition}</p>
                 </div>
               ))}
             </div>

@@ -26,11 +26,11 @@ export default function HeroSection() {
             </div>
             
             <h1 
-              className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-slate-800 leading-[1.15] mb-8 tracking-tight"
+              className="text-[1.75rem] sm:text-5xl lg:text-[3.5rem] font-black text-slate-800 leading-[1.25] mb-5 tracking-tight"
               dangerouslySetInnerHTML={{ __html: t('title') }}
             />
             
-            <p className="text-lg sm:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-[15px] sm:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               {t('description')}
             </p>
             
@@ -58,8 +58,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column: Concept Illustration (Horizontal Pipeline) */}
-          <div className="w-full lg:w-7/12 relative">
+          {/* Right Column: Concept Illustration (Horizontal Pipeline) - Hidden on mobile to reduce scroll fatigue */}
+          <div className="hidden lg:block w-full lg:w-7/12 relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/5 to-brand-green/5 rounded-[3rem] transform rotate-3 scale-105 -z-10"></div>
             <div className="bg-white/40 backdrop-blur-3xl border border-white/60 p-4 md:p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden h-full flex flex-col justify-center">
               

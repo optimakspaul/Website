@@ -54,12 +54,12 @@ export default function ServicesSection() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <div key={index} className={`bg-white rounded-2xl p-8 border ${service.border} shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}>
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${service.bg} ${service.color} group-hover:scale-110 transition-transform`}>
-                <service.icon className="w-7 h-7" />
+            <div key={index} className={`bg-white rounded-2xl p-6 md:p-8 border ${service.border} shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}>
+              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6 ${service.bg} ${service.color} group-hover:scale-110 transition-transform`}>
+                <service.icon className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">{service.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">{service.description}</p>
+              <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-2 md:mb-3">{service.title}</h3>
+              <p className="text-slate-600 leading-relaxed text-[15px] md:text-sm">{service.description}</p>
             </div>
           ))}
         </div>
