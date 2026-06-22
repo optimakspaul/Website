@@ -181,7 +181,19 @@
     "form_phone": "WhatsApp 号码 (发送结果用)",
     "form_email": "Email",
     "form_btn": "将结果发送到我的 WhatsApp",
-    "form_note": "我们非常重视您的隐私，此资讯仅用于发送报告。"
+    "form_note": "我们非常重视您的隐私，此资讯仅用于发送报告。",
+    "ready_send_title": "准备好发送你的流程检测结果了吗？",
+    "message_preview": "讯息预览：",
+    "send_btn": "发送到 WhatsApp"
+  },
+  "WhatsAppMockup": {
+    "incoming_title": "即时 WhatsApp 询价模拟",
+    "customer_message": "你好，我想预约 2 台冷气清洗服务。",
+    "flow_title": "Optimaks 自动化流程",
+    "step_1": "询价自动登录",
+    "step_2": "报价单自动生成",
+    "step_3": "派工时段自动建议",
+    "step_4": "完成款项自动核对"
   },
   "BeforeAfter": {
     "section_title": "导入前后对比",

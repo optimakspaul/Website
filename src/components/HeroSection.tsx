@@ -1,9 +1,11 @@
 import React from 'react';
 import { Zap, ChevronRight, CheckCircle2, MessageCircle, FileText, Database, BarChart3, Settings, Users, PieChart, LineChart, Mail, Calendar, Receipt } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import WhatsAppWorkflowCard from '@/components/WhatsAppWorkflowCard';
 
 export default function HeroSection() {
   const t = useTranslations('Hero');
+  const tMock = useTranslations('WhatsAppMockup');
 
   return (
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-50 min-h-[90vh] flex items-center">
@@ -56,6 +58,16 @@ export default function HeroSection() {
                 <CheckCircle2 className="w-5 h-5 text-slate-400" /> {t('feature_custom')}
               </div>
             </div>
+            
+            <div className="block lg:hidden mt-8 text-left max-w-md mx-auto">
+              <WhatsAppWorkflowCard
+                incomingTitle={tMock('incoming_title')}
+                customerMessage={tMock('customer_message')}
+                flowTitle={tMock('flow_title')}
+                steps={[tMock('step_1'), tMock('step_2'), tMock('step_3')]}
+                compact={true}
+              />
+            </div>
           </div>
 
           {/* Right Column: Premium Mockup Dashboard - Hidden on mobile to reduce scroll fatigue */}
@@ -77,6 +89,15 @@ export default function HeroSection() {
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping"></span>
                     <span className="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Active</span>
                   </div>
+                </div>
+
+                <div className="mb-6">
+                  <WhatsAppWorkflowCard
+                    incomingTitle={tMock('incoming_title')}
+                    customerMessage={tMock('customer_message')}
+                    flowTitle={tMock('flow_title')}
+                    steps={[tMock('step_1'), tMock('step_2'), tMock('step_3'), tMock('step_4')]}
+                  />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

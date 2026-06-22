@@ -181,7 +181,19 @@
     "form_phone": "WhatsApp 號碼 (發送結果用)",
     "form_email": "Email",
     "form_btn": "將結果發送到我的 WhatsApp",
-    "form_note": "我們非常重視您的隱私，此資訊僅用於發送報告。"
+    "form_note": "我們非常重視您的隱私，此資訊僅用於發送報告。",
+    "ready_send_title": "準備好發送你的流程檢測結果了嗎？",
+    "message_preview": "訊息預覽：",
+    "send_btn": "發送到 WhatsApp"
+  },
+  "WhatsAppMockup": {
+    "incoming_title": "即時 WhatsApp 詢價模擬",
+    "customer_message": "你好，我想預約 2 台冷氣清洗服務。",
+    "flow_title": "Optimaks 自動化流程",
+    "step_1": "詢價自動登錄",
+    "step_2": "報價單自動生成",
+    "step_3": "派工時段自動建議",
+    "step_4": "完成款項自動核對"
   },
   "BeforeAfter": {
     "section_title": "導入前後對比",

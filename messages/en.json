@@ -181,7 +181,19 @@
     "form_phone": "WhatsApp Number (For sending report)",
     "form_email": "Email Address",
     "form_btn": "Send My Workflow Result to WhatsApp",
-    "form_note": "We respect your privacy. Used only for sending your workflow report."
+    "form_note": "We respect your privacy. Used only for sending your workflow report.",
+    "ready_send_title": "Ready to send your workflow result?",
+    "message_preview": "Message Preview:",
+    "send_btn": "Send to WhatsApp"
+  },
+  "WhatsAppMockup": {
+    "incoming_title": "Incoming WhatsApp Inquiry",
+    "customer_message": "Need aircon servicing for 2 units.",
+    "flow_title": "Optimaks Flow",
+    "step_1": "Lead captured",
+    "step_2": "Quote ready",
+    "step_3": "Booking slot suggested",
+    "step_4": "Payment follow-up ready"
   },
   "BeforeAfter": {
     "section_title": "Before vs. After",

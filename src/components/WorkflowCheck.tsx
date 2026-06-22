@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import { ChevronRight, Check, ArrowRight, ChevronDown } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { buildWhatsAppUrl, buildAuditWhatsAppMessage } from '@/lib/whatsapp';
 
 export default function WorkflowCheck() {
   const t = useTranslations('WorkflowCheck');
@@ -34,6 +35,9 @@ export default function WorkflowCheck() {
   const [company, setCompany] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [showPreview, setShowPreview] = useState(false);
+  const locale = useLocale();
+  const isChinese = locale.startsWith('zh');
 
   const toggleSelection = (stepIndex: number, option: string) => {
     setSelections(prev => {
@@ -71,28 +75,40 @@ export default function WorkflowCheck() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setShowPreview(true);
+  };
+
+  const handleWhatsAppSend = () => {
     const typeOfBusiness = (selections[0] || []).join(', ');
     const bottleneck = (selections[1] || []).join(', ');
     const tools = (selections[2] || []).join(', ');
-    const improvement = (selections[3] || []).join(', ');
 
-    const message = `Hello Optimaks, I have completed the 1-Min Workflow Audit.
+    const message = buildAuditWhatsAppMessage({
+      businessType: typeOfBusiness,
+      mainProblem: bottleneck,
+      currentTools: tools,
+      name,
+      phone,
+      email
+    }, isChinese);
 
-*Details:*
-- Name: ${name}
-- Company: ${company}
-- WhatsApp: ${phone}
-- Email: ${email}
+    const waNumber = process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203';
+    const url = buildWhatsAppUrl(waNumber, message);
+    window.open(url, '_blank');
+  };
 
-*Audit Answers:*
-1. Business Type: ${typeOfBusiness}
-2. Key Bottleneck: ${bottleneck}
-3. Current Tools: ${tools}
-4. Improvement Wanted: ${improvement}
-
-Please send me my custom workflow optimization report!`;
-
-    window.open(`https://wa.me/6588921203?text=${encodeURIComponent(message)}`, '_blank');
+  const getPreviewText = (): string => {
+    const typeOfBusiness = (selections[0] || []).join(', ');
+    const bottleneck = (selections[1] || []).join(', ');
+    const tools = (selections[2] || []).join(', ');
+    return buildAuditWhatsAppMessage({
+      businessType: typeOfBusiness,
+      mainProblem: bottleneck,
+      currentTools: tools,
+      name,
+      phone,
+      email
+    }, isChinese);
   };
 
   return (
@@ -230,17 +246,44 @@ Please send me my custom workflow optimization report!`;
               </div>
 
               <div className="max-w-md mx-auto">
-                <p className="font-bold text-slate-800 mb-4">{t('form_title')}</p>
-                <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
-                  <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder={t('form_name')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                  <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} placeholder={t('form_company')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                  <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t('form_phone')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t('form_email')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                  <button type="submit" className="w-full bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-green/20 cursor-pointer">
-                    {t('form_btn')} <ArrowRight className="w-4 h-4" />
-                  </button>
-                </form>
-                <p className="text-xs text-slate-400 mt-4">{t('form_note')}</p>
+                {!showPreview ? (
+                  <>
+                    <p className="font-bold text-slate-800 mb-4">{t('form_title')}</p>
+                    <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
+                      <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder={t('form_name')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                      <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} placeholder={t('form_company')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                      <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t('form_phone')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t('form_email')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                      <button type="submit" className="w-full bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-green/20 cursor-pointer">
+                        {t('form_btn')} <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </form>
+                    <p className="text-xs text-slate-400 mt-4">{t('form_note')}</p>
+                  </>
+                ) : (
+                  <div className="animation-fade-in text-left">
+                    <p className="font-bold text-slate-800 mb-3 text-center">{t('ready_send_title')}</p>
+                    <div className="bg-slate-105 border border-slate-200/80 rounded-2xl p-4 mb-4 font-mono text-xs text-slate-700 whitespace-pre-wrap leading-relaxed max-h-[220px] overflow-y-auto shadow-inner">
+                      <div className="text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-wider">{t('message_preview')}</div>
+                      {getPreviewText()}
+                    </div>
+                    
+                    <div className="flex gap-2">
+                      <button 
+                        onClick={() => setShowPreview(false)}
+                        className="w-1/3 bg-slate-200 hover:bg-slate-300 text-slate-700 px-4 py-3 rounded-xl font-bold transition-all cursor-pointer"
+                      >
+                        {t('btn_back')}
+                      </button>
+                      <button 
+                        onClick={handleWhatsAppSend}
+                        className="w-2/3 bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-green/20 cursor-pointer"
+                      >
+                        {t('send_btn')} <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}
