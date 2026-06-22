@@ -22,7 +22,7 @@ export default function Navbar() {
     { label: t('about'), href: '#' },
     { label: t('how'), href: '#how-it-works' },
     { label: t('services'), href: '#services' },
-    { label: t('who'), href: '#industries' },
+    { label: t('who'), href: '#example-workflows' },
     { label: t('cases'), href: '#' },
     { label: t('resources'), href: '#' },
   ];

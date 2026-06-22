@@ -30,6 +30,10 @@ export default function WorkflowCheck() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selections, setSelections] = useState<Record<number, string[]>>({});
   const [isCompleted, setIsCompleted] = useState(false);
+  const [name, setName] = useState('');
+  const [company, setCompany] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
 
   const toggleSelection = (stepIndex: number, option: string) => {
     setSelections(prev => {
@@ -63,6 +67,32 @@ export default function WorkflowCheck() {
   const handlePrev = () => {
     setDropdownOpen(false);
     setCurrentStep(c => Math.max(0, c - 1));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const typeOfBusiness = (selections[0] || []).join(', ');
+    const bottleneck = (selections[1] || []).join(', ');
+    const tools = (selections[2] || []).join(', ');
+    const improvement = (selections[3] || []).join(', ');
+
+    const message = `Hello Optimaks, I have completed the 1-Min Workflow Audit.
+
+*Details:*
+- Name: ${name}
+- Company: ${company}
+- WhatsApp: ${phone}
+- Email: ${email}
+
+*Audit Answers:*
+1. Business Type: ${typeOfBusiness}
+2. Key Bottleneck: ${bottleneck}
+3. Current Tools: ${tools}
+4. Improvement Wanted: ${improvement}
+
+Please send me my custom workflow optimization report!`;
+
+    window.open(`https://wa.me/6588921203?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
@@ -201,12 +231,12 @@ export default function WorkflowCheck() {
 
               <div className="max-w-md mx-auto">
                 <p className="font-bold text-slate-800 mb-4">{t('form_title')}</p>
-                <form className="flex flex-col gap-3" onSubmit={(e) => { e.preventDefault(); console.log('Form submitted'); }}>
-                  <input type="text" placeholder={t('form_name')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                  <input type="text" placeholder={t('form_company')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                  <input type="tel" placeholder={t('form_phone')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                  <input type="email" placeholder={t('form_email')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
-                  <button type="submit" className="w-full bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-green/20">
+                <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
+                  <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder={t('form_name')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                  <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} placeholder={t('form_company')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                  <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t('form_phone')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t('form_email')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                  <button type="submit" className="w-full bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-green/20 cursor-pointer">
                     {t('form_btn')} <ArrowRight className="w-4 h-4" />
                   </button>
                 </form>
