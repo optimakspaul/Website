@@ -2,11 +2,28 @@ import React from 'react';
 import { Zap, ChevronRight, CheckCircle2, MessageCircle, FileText, Calendar, Receipt } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import WhatsAppWorkflowCard from '@/components/WhatsAppWorkflowCard';
-import { buildWhatsAppUrl } from '@/lib/whatsapp';
+import { buildWhatsAppUrl, hasWhatsAppNumber } from '@/lib/whatsapp';
 
 export default function HeroSection() {
   const t = useTranslations('Hero');
   const tMock = useTranslations('WhatsAppMockup');
+
+  const waNumber = process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER;
+  const hasWA = hasWhatsAppNumber(waNumber);
+
+  // Helper to generate dynamic properties for anchor tags to prevent target="_blank" on internal hash fallback
+  const getWhatsAppLinkProps = (message: string) => {
+    if (hasWA) {
+      return {
+        href: buildWhatsAppUrl(waNumber, message),
+        target: "_blank",
+        rel: "noopener noreferrer"
+      };
+    }
+    return {
+      href: "#workflow-check"
+    };
+  };
 
   return (
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-50 min-h-[90vh] flex items-center">
@@ -42,7 +59,7 @@ export default function HeroSection() {
                 <Zap className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 {t('cta_primary')}
               </a>
-              <a href="#how-it-works" className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:border-slate-300 flex items-center justify-center gap-2 group">
+              <a href="#example-workflows" className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:border-slate-300 flex items-center justify-center gap-2 group">
                 {t('cta_secondary')}
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -62,9 +79,7 @@ export default function HeroSection() {
             
             <div className="block lg:hidden mt-8 text-left max-w-md mx-auto">
               <a 
-                href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_chat_message'))}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...getWhatsAppLinkProps(tMock('hero_chat_message'))}
                 className="block hover:scale-[1.01] transition-transform duration-300 cursor-pointer"
               >
                 <WhatsAppWorkflowCard
@@ -101,9 +116,7 @@ export default function HeroSection() {
 
                 <div className="mb-6">
                   <a 
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_chat_message'))}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getWhatsAppLinkProps(tMock('hero_chat_message'))}
                     className="block hover:scale-[1.01] transition-transform duration-300 cursor-pointer"
                   >
                     <WhatsAppWorkflowCard
@@ -118,9 +131,7 @@ export default function HeroSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Card 1: WhatsApp Lead Auto-Capture */}
                   <a
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_card1_chat_message'))}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getWhatsAppLinkProps(tMock('hero_card1_chat_message'))}
                     className="block cursor-pointer"
                   >
                     <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300 h-full">
@@ -141,9 +152,7 @@ export default function HeroSection() {
 
                   {/* Card 2: 1-Click PDF Quote */}
                   <a
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_card2_chat_message'))}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getWhatsAppLinkProps(tMock('hero_card2_chat_message'))}
                     className="block cursor-pointer"
                   >
                     <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300 h-full">
@@ -164,9 +173,7 @@ export default function HeroSection() {
 
                   {/* Card 3: Smart Scheduling */}
                   <a
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_card3_chat_message'))}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getWhatsAppLinkProps(tMock('hero_card3_chat_message'))}
                     className="block cursor-pointer"
                   >
                     <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300 h-full">
@@ -187,9 +194,7 @@ export default function HeroSection() {
 
                   {/* Card 4: Auto-Payment Follow-up */}
                   <a
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_card4_chat_message'))}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getWhatsAppLinkProps(tMock('hero_card4_chat_message'))}
                     className="block cursor-pointer"
                   >
                     <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300 h-full">

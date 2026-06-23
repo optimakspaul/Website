@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronRight, Check, ArrowRight } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
-import { buildWhatsAppUrl, buildAuditWhatsAppMessage } from '@/lib/whatsapp';
+import { buildWhatsAppUrl, buildAuditWhatsAppMessage, hasWhatsAppNumber } from '@/lib/whatsapp';
 
 export default function WorkflowCheck() {
   const t = useTranslations('WorkflowCheck');
@@ -91,8 +91,12 @@ export default function WorkflowCheck() {
     }, isChinese);
 
     const waNumber = process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER;
-    const url = buildWhatsAppUrl(waNumber, message);
-    window.open(url, '_blank');
+    if (hasWhatsAppNumber(waNumber)) {
+      const url = buildWhatsAppUrl(waNumber, message);
+      window.open(url, '_blank');
+    } else {
+      window.location.assign('#why-trust-us');
+    }
   };
 
   const getPreviewText = (): string => {

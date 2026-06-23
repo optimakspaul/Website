@@ -1,10 +1,16 @@
 import React from 'react';
 import { Mail, MessageCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { buildWhatsAppUrl } from '@/lib/whatsapp';
+import { buildWhatsAppUrl, hasWhatsAppNumber } from '@/lib/whatsapp';
 
 export default function Footer() {
   const t = useTranslations('Footer');
+
+  const waNumber = process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER;
+  const hasWA = hasWhatsAppNumber(waNumber);
+  const waMessage = 'Hi Optimaks, I have some questions about workflow automation.';
+  const waHref = hasWA ? buildWhatsAppUrl(waNumber, waMessage) : '#workflow-check';
+  const waProps = hasWA ? { target: "_blank", rel: "noopener noreferrer" } : {};
 
   return (
     <footer className="bg-white border-t border-slate-100 pt-16 pb-24 md:pb-8">
@@ -42,7 +48,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, 'Hi Optimaks, I have some questions about workflow automation.')} className="flex items-center gap-2 text-slate-500 hover:text-green-500 transition-colors">
+                <a href={waHref} {...waProps} className="flex items-center gap-2 text-slate-500 hover:text-green-500 transition-colors">
                   <MessageCircle className="w-4 h-4" /> {t('contact_wa')}
                 </a>
               </li>

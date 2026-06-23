@@ -1,4 +1,11 @@
 /**
+ * Checks if a valid WhatsApp phone number exists.
+ */
+export function hasWhatsAppNumber(phoneNumber: string | undefined): boolean {
+  return Boolean(phoneNumber && phoneNumber.replace(/\D/g, '').length > 0);
+}
+
+/**
  * Builds a direct click-to-chat WhatsApp URL using wa.me.
  * Safe fallback is returned if phoneNumber is missing.
  */
