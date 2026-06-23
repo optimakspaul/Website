@@ -2,6 +2,7 @@ import React from 'react';
 import { Zap, ChevronRight, CheckCircle2, MessageCircle, FileText, Database, BarChart3, Settings, Users, PieChart, LineChart, Mail, Calendar, Receipt } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import WhatsAppWorkflowCard from '@/components/WhatsAppWorkflowCard';
+import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function HeroSection() {
   const t = useTranslations('Hero');
@@ -60,13 +61,20 @@ export default function HeroSection() {
             </div>
             
             <div className="block lg:hidden mt-8 text-left max-w-md mx-auto">
-              <WhatsAppWorkflowCard
-                incomingTitle={tMock('incoming_title')}
-                customerMessage={tMock('customer_message')}
-                flowTitle={tMock('flow_title')}
-                steps={[tMock('step_1'), tMock('step_2'), tMock('step_3')]}
-                compact={true}
-              />
+              <a 
+                href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_chat_message'))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:scale-[1.01] transition-transform duration-300 cursor-pointer"
+              >
+                <WhatsAppWorkflowCard
+                  incomingTitle={tMock('incoming_title')}
+                  customerMessage={tMock('customer_message')}
+                  flowTitle={tMock('flow_title')}
+                  steps={[tMock('step_1'), tMock('step_2'), tMock('step_3')]}
+                  compact={true}
+                />
+              </a>
             </div>
           </div>
 
@@ -92,12 +100,19 @@ export default function HeroSection() {
                 </div>
 
                 <div className="mb-6">
-                  <WhatsAppWorkflowCard
-                    incomingTitle={tMock('incoming_title')}
-                    customerMessage={tMock('customer_message')}
-                    flowTitle={tMock('flow_title')}
-                    steps={[tMock('step_1'), tMock('step_2'), tMock('step_3'), tMock('step_4')]}
-                  />
+                  <a 
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_chat_message'))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block hover:scale-[1.01] transition-transform duration-300 cursor-pointer"
+                  >
+                    <WhatsAppWorkflowCard
+                      incomingTitle={tMock('incoming_title')}
+                      customerMessage={tMock('customer_message')}
+                      flowTitle={tMock('flow_title')}
+                      steps={[tMock('step_1'), tMock('step_2'), tMock('step_3'), tMock('step_4')]}
+                    />
+                  </a>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

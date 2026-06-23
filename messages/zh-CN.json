@@ -193,7 +193,8 @@
     "step_1": "询价自动登录",
     "step_2": "报价单自动生成",
     "step_3": "派工时段自动建议",
-    "step_4": "完成款项自动核对"
+    "step_4": "完成款项自动核对",
+    "hero_chat_message": "您好 Optimaks，我在网站上看到了 WhatsApp 流程自动化模拟，想了解如何自动化我们的服务业流程！"
   },
   "BeforeAfter": {
     "section_title": "导入前后对比",

@@ -193,7 +193,8 @@
     "step_1": "Lead captured",
     "step_2": "Quote ready",
     "step_3": "Booking slot suggested",
-    "step_4": "Payment follow-up ready"
+    "step_4": "Payment follow-up ready",
+    "hero_chat_message": "Hi Optimaks, I saw the WhatsApp workflow mockup on your website and would like to learn more about automating my service business!"
   },
   "BeforeAfter": {
     "section_title": "Before vs. After",

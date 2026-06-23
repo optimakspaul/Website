@@ -193,7 +193,8 @@
     "step_1": "詢價自動登錄",
     "step_2": "報價單自動生成",
     "step_3": "派工時段自動建議",
-    "step_4": "完成款項自動核對"
+    "step_4": "完成款項自動核對",
+    "hero_chat_message": "您好 Optimaks，我在網站上看到了 WhatsApp 流程自動化模擬，想了解如何自動化我們的服務業流程！"
   },
   "BeforeAfter": {
     "section_title": "導入前後對比",
