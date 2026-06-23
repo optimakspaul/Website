@@ -194,7 +194,11 @@
     "step_2": "Quote ready",
     "step_3": "Booking slot suggested",
     "step_4": "Payment follow-up ready",
-    "hero_chat_message": "Hi Optimaks, I saw the WhatsApp workflow mockup on your website and would like to learn more about automating my service business!"
+    "hero_chat_message": "Hi Optimaks, I saw the WhatsApp workflow mockup on your website and would like to learn more about automating my service business!",
+    "hero_card1_chat_message": "Hi Optimaks, I am interested in the WhatsApp Lead Auto-Capture feature. How can I automatically capture chats into our CRM?",
+    "hero_card2_chat_message": "Hi Optimaks, I am interested in the 1-Click PDF Quote feature. How can I automatically generate and send quotes in 60 seconds?",
+    "hero_card3_chat_message": "Hi Optimaks, I am interested in the Smart Scheduling & Dispatch feature. How can I manage my field team's calendar without clashes?",
+    "hero_card4_chat_message": "Hi Optimaks, I am interested in the Auto-Payment Follow-up feature. How can I automate invoice creation and tracking?"
   },
   "BeforeAfter": {
     "section_title": "Before vs. After",

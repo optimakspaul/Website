@@ -117,68 +117,96 @@ export default function HeroSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Card 1: WhatsApp Lead Auto-Capture */}
-                  <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-                          <MessageCircle className="w-4 h-4" />
+                  <a
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_card1_chat_message'))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block cursor-pointer"
+                  >
+                    <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300 h-full">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                            <MessageCircle className="w-4 h-4" />
+                          </div>
+                          <span className="text-xs font-bold text-slate-300">{t('mockup_card1_title')}</span>
                         </div>
-                        <span className="text-xs font-bold text-slate-300">{t('mockup_card1_title')}</span>
+                        <span className="text-[10px] font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                          {t('mockup_card1_status')}
+                        </span>
                       </div>
-                      <span className="text-[10px] font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-                        {t('mockup_card1_status')}
-                      </span>
+                      <p className="text-xs text-slate-400 font-mono italic">{t('mockup_card1_text')}</p>
                     </div>
-                    <p className="text-xs text-slate-400 font-mono italic">{t('mockup_card1_text')}</p>
-                  </div>
+                  </a>
 
                   {/* Card 2: 1-Click PDF Quote */}
-                  <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-                          <FileText className="w-4 h-4" />
+                  <a
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_card2_chat_message'))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block cursor-pointer"
+                  >
+                    <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300 h-full">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                            <FileText className="w-4 h-4" />
+                          </div>
+                          <span className="text-xs font-bold text-slate-300">{t('mockup_card2_title')}</span>
                         </div>
-                        <span className="text-xs font-bold text-slate-300">{t('mockup_card2_title')}</span>
+                        <span className="text-[10px] font-medium text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full border border-blue-500/20">
+                          {t('mockup_card2_status')}
+                        </span>
                       </div>
-                      <span className="text-[10px] font-medium text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full border border-blue-500/20">
-                        {t('mockup_card2_status')}
-                      </span>
+                      <p className="text-xs text-slate-400 font-mono italic">{t('mockup_card2_text')}</p>
                     </div>
-                    <p className="text-xs text-slate-400 font-mono italic">{t('mockup_card2_text')}</p>
-                  </div>
+                  </a>
 
                   {/* Card 3: Smart Scheduling */}
-                  <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 group-hover:scale-110 transition-transform">
-                          <Calendar className="w-4 h-4" />
+                  <a
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_card3_chat_message'))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block cursor-pointer"
+                  >
+                    <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300 h-full">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 group-hover:scale-110 transition-transform">
+                            <Calendar className="w-4 h-4" />
+                          </div>
+                          <span className="text-xs font-bold text-slate-300">{t('mockup_card3_title')}</span>
                         </div>
-                        <span className="text-xs font-bold text-slate-300">{t('mockup_card3_title')}</span>
+                        <span className="text-[10px] font-medium text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded-full border border-violet-500/20">
+                          {t('mockup_card3_status')}
+                        </span>
                       </div>
-                      <span className="text-[10px] font-medium text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded-full border border-violet-500/20">
-                        {t('mockup_card3_status')}
-                      </span>
+                      <p className="text-xs text-slate-400 font-mono italic">{t('mockup_card3_text')}</p>
                     </div>
-                    <p className="text-xs text-slate-400 font-mono italic">{t('mockup_card3_text')}</p>
-                  </div>
+                  </a>
 
                   {/* Card 4: Auto-Payment Follow-up */}
-                  <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                          <Receipt className="w-4 h-4" />
+                  <a
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_card4_chat_message'))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block cursor-pointer"
+                  >
+                    <div className="bg-slate-950/60 backdrop-blur border border-slate-800/80 p-4 rounded-2xl hover:border-slate-700/80 hover:-translate-y-0.5 transition-all group duration-300 h-full">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                            <Receipt className="w-4 h-4" />
+                          </div>
+                          <span className="text-xs font-bold text-slate-300">{t('mockup_card4_title')}</span>
                         </div>
-                        <span className="text-xs font-bold text-slate-300">{t('mockup_card4_title')}</span>
+                        <span className="text-[10px] font-medium text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                          {t('mockup_card4_status')}
+                        </span>
                       </div>
-                      <span className="text-[10px] font-medium text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
-                        {t('mockup_card4_status')}
-                      </span>
+                      <p className="text-xs text-slate-400 font-mono italic">{t('mockup_card4_text')}</p>
                     </div>
-                    <p className="text-xs text-slate-400 font-mono italic">{t('mockup_card4_text')}</p>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

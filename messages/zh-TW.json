@@ -194,7 +194,11 @@
     "step_2": "報價單自動生成",
     "step_3": "派工時段自動建議",
     "step_4": "完成款項自動核對",
-    "hero_chat_message": "您好 Optimaks，我在網站上看到了 WhatsApp 流程自動化模擬，想了解如何自動化我們的服務業流程！"
+    "hero_chat_message": "您好 Optimaks，我在網站上看到了 WhatsApp 流程自動化模擬，想了解如何自動化我們的服務業流程！",
+    "hero_card1_chat_message": "您好 Optimaks，我對「WhatsApp 詢價自動擷取」感興趣，想了解如何自動將客戶詢答存入 CRM！",
+    "hero_card2_chat_message": "您好 Optimaks，我對「一鍵產生 PDF 報價單」感興趣，想了解如何 60 秒內自動發送報價單！",
+    "hero_card3_chat_message": "您好 Optimaks，我對「智慧排程與派工」感興趣，想了解如何無衝突地指派工單給外勤人員！",
+    "hero_card4_chat_message": "您好 Optimaks，我對「自動催收尾款」感興趣，想了解如何自動產生發票與發送催繳提醒！"
   },
   "BeforeAfter": {
     "section_title": "導入前後對比",

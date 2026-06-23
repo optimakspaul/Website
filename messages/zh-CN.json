@@ -194,7 +194,11 @@
     "step_2": "报价单自动生成",
     "step_3": "派工时段自动建议",
     "step_4": "完成款项自动核对",
-    "hero_chat_message": "您好 Optimaks，我在网站上看到了 WhatsApp 流程自动化模拟，想了解如何自动化我们的服务业流程！"
+    "hero_chat_message": "您好 Optimaks，我在网站上看到了 WhatsApp 流程自动化模拟，想了解如何自动化我们的服务业流程！",
+    "hero_card1_chat_message": "您好 Optimaks，我对「WhatsApp 询价自动截取」感兴趣，想了解如何自动将客户询答存入 CRM！",
+    "hero_card2_chat_message": "您好 Optimaks，我对「一键产生 PDF 报价单」感兴趣，想了解如何 60 秒内自动发送报价单！",
+    "hero_card3_chat_message": "您好 Optimaks，我对「智慧排程与派工」感兴趣，想了解如何无冲突地指派工单给外勤人员！",
+    "hero_card4_chat_message": "您好 Optimaks，我对「自动催收尾款」感兴趣，想了解如何自动产生发票与发送催缴提醒！"
   },
   "BeforeAfter": {
     "section_title": "导入前后对比",
