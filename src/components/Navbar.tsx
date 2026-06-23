@@ -19,12 +19,10 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { label: t('about'), href: '#' },
+    { label: t('about'), href: '#why-trust-us' },
     { label: t('how'), href: '#how-it-works' },
     { label: t('services'), href: '#services' },
     { label: t('who'), href: '#example-workflows' },
-    { label: t('cases'), href: '#' },
-    { label: t('resources'), href: '#' },
   ];
 
   return (

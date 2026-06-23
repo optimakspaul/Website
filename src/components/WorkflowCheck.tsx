@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ChevronRight, Check, ArrowRight, ChevronDown } from 'lucide-react';
+import { ChevronRight, Check, ArrowRight } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { buildWhatsAppUrl, buildAuditWhatsAppMessage } from '@/lib/whatsapp';
 
@@ -28,7 +28,6 @@ export default function WorkflowCheck() {
   ];
 
   const [currentStep, setCurrentStep] = useState(0);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selections, setSelections] = useState<Record<number, string[]>>({});
   const [isCompleted, setIsCompleted] = useState(false);
   const [name, setName] = useState('');
@@ -60,7 +59,6 @@ export default function WorkflowCheck() {
   };
 
   const handleNext = () => {
-    setDropdownOpen(false);
     if (currentStep < steps.length - 1) {
       setCurrentStep(curr => curr + 1);
     } else {
@@ -69,7 +67,6 @@ export default function WorkflowCheck() {
   };
 
   const handlePrev = () => {
-    setDropdownOpen(false);
     setCurrentStep(c => Math.max(0, c - 1));
   };
 
@@ -88,11 +85,12 @@ export default function WorkflowCheck() {
       mainProblem: bottleneck,
       currentTools: tools,
       name,
+      company,
       phone,
       email
     }, isChinese);
 
-    const waNumber = process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203';
+    const waNumber = process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER;
     const url = buildWhatsAppUrl(waNumber, message);
     window.open(url, '_blank');
   };
@@ -106,6 +104,7 @@ export default function WorkflowCheck() {
       mainProblem: bottleneck,
       currentTools: tools,
       name,
+      company,
       phone,
       email
     }, isChinese);
@@ -263,7 +262,7 @@ export default function WorkflowCheck() {
                 ) : (
                   <div className="animation-fade-in text-left">
                     <p className="font-bold text-slate-800 mb-3 text-center">{t('ready_send_title')}</p>
-                    <div className="bg-slate-105 border border-slate-200/80 rounded-2xl p-4 mb-4 font-mono text-xs text-slate-700 whitespace-pre-wrap leading-relaxed max-h-[220px] overflow-y-auto shadow-inner">
+                    <div className="bg-slate-100 border border-slate-200/80 rounded-2xl p-4 mb-4 font-mono text-xs text-slate-700 whitespace-pre-wrap leading-relaxed max-h-[220px] overflow-y-auto shadow-inner">
                       <div className="text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-wider">{t('message_preview')}</div>
                       {getPreviewText()}
                     </div>

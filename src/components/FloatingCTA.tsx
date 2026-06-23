@@ -29,11 +29,8 @@ export default function FloatingCTA() {
       rootMargin: "50px 0px 50px 0px" // Slight margin to hide it slightly before it overlaps
     });
 
-    // We can observe by id. FinalCTA and Footer don't have ids, so let's observe industries and the bottom
-    const elementsToObserve = [
-      document.getElementById('workflow-check'),
-      document.getElementById('pain-points') // Optional: if we want to show it here
-    ];
+    // We can observe by id. FinalCTA and Footer don't have ids.
+    // Let's just reliably observe 'workflow-check'
 
     // Alternatively, we can select by element type if we know what we want to avoid.
     // Let's just reliably observe 'workflow-check'

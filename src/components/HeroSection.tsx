@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, ChevronRight, CheckCircle2, MessageCircle, FileText, Database, BarChart3, Settings, Users, PieChart, LineChart, Mail, Calendar, Receipt } from 'lucide-react';
+import { Zap, ChevronRight, CheckCircle2, MessageCircle, FileText, Calendar, Receipt } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import WhatsAppWorkflowCard from '@/components/WhatsAppWorkflowCard';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
@@ -62,7 +62,7 @@ export default function HeroSection() {
             
             <div className="block lg:hidden mt-8 text-left max-w-md mx-auto">
               <a 
-                href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_chat_message'))}
+                href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_chat_message'))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block hover:scale-[1.01] transition-transform duration-300 cursor-pointer"
@@ -101,7 +101,7 @@ export default function HeroSection() {
 
                 <div className="mb-6">
                   <a 
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_chat_message'))}
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_chat_message'))}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block hover:scale-[1.01] transition-transform duration-300 cursor-pointer"
@@ -118,7 +118,7 @@ export default function HeroSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Card 1: WhatsApp Lead Auto-Capture */}
                   <a
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_card1_chat_message'))}
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_card1_chat_message'))}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block cursor-pointer"
@@ -141,7 +141,7 @@ export default function HeroSection() {
 
                   {/* Card 2: 1-Click PDF Quote */}
                   <a
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_card2_chat_message'))}
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_card2_chat_message'))}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block cursor-pointer"
@@ -164,7 +164,7 @@ export default function HeroSection() {
 
                   {/* Card 3: Smart Scheduling */}
                   <a
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_card3_chat_message'))}
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_card3_chat_message'))}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block cursor-pointer"
@@ -187,7 +187,7 @@ export default function HeroSection() {
 
                   {/* Card 4: Auto-Payment Follow-up */}
                   <a
-                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER || '6588921203', tMock('hero_card4_chat_message'))}
+                    href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, tMock('hero_card4_chat_message'))}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block cursor-pointer"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, MessageCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -24,11 +25,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-slate-800 mb-4">{t('nav_title')}</h4>
             <ul className="space-y-3 text-slate-500">
-              <li><a href="#" className="hover:text-brand-blue transition-colors">{t('nav_about')}</a></li>
+              <li><a href="#why-trust-us" className="hover:text-brand-blue transition-colors">{t('nav_about')}</a></li>
               <li><a href="#how-it-works" className="hover:text-brand-blue transition-colors">{t('nav_how')}</a></li>
               <li><a href="#services" className="hover:text-brand-blue transition-colors">{t('nav_services')}</a></li>
               <li><a href="#example-workflows" className="hover:text-brand-blue transition-colors">{t('nav_who')}</a></li>
-              <li><a href="#" className="hover:text-brand-blue transition-colors">{t('nav_resources')}</a></li>
             </ul>
           </div>
 
@@ -42,7 +42,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="flex items-center gap-2 text-slate-500 hover:text-green-500 transition-colors">
+                <a href={buildWhatsAppUrl(process.env.NEXT_PUBLIC_OPTIMAKS_WHATSAPP_NUMBER, 'Hi Optimaks, I have some questions about workflow automation.')} className="flex items-center gap-2 text-slate-500 hover:text-green-500 transition-colors">
                   <MessageCircle className="w-4 h-4" /> {t('contact_wa')}
                 </a>
               </li>
@@ -55,8 +55,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Optimaks. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-sm text-slate-400">
-            <a href="#" className="hover:text-slate-600">{t('privacy')}</a>
-            <a href="#" className="hover:text-slate-600">{t('terms')}</a>
+            <span className="cursor-default">{t('privacy')} (Coming Soon)</span>
+            <span className="cursor-default">{t('terms')} (Coming Soon)</span>
           </div>
         </div>
       </div>

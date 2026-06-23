@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import PainPointsSection from '@/components/PainPointsSection';
 import BeforeAfterSection from '@/components/BeforeAfterSection';
+import ServicesSection from '@/components/ServicesSection';
 import IndustriesSection from '@/components/IndustriesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import WorkflowCheck from '@/components/WorkflowCheck';
@@ -19,6 +20,7 @@ export default function Home() {
         <HeroSection />
         <PainPointsSection />
         <BeforeAfterSection />
+        <ServicesSection />
         <IndustriesSection />
         <HowItWorksSection />
         <WorkflowCheck />

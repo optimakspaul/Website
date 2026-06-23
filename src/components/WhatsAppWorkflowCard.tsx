@@ -56,7 +56,7 @@ export default function WhatsAppWorkflowCard({
               {/* Bubble Tail */}
               <div className="absolute top-0 left-0 -translate-x-[4px] w-2 h-2 bg-white transform rotate-[45deg] rounded-tl-sm"></div>
               <p className="leading-relaxed font-bold text-slate-800">
-                "{customerMessage}"
+                &ldquo;{customerMessage}&rdquo;
               </p>
             </div>
           </div>
