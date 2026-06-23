@@ -43,8 +43,8 @@ export default function Footer() {
             <h4 className="font-bold text-slate-800 mb-4">{t('contact_title')}</h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:hello@optimaks.com" className="flex items-center gap-2 text-slate-500 hover:text-brand-blue transition-colors">
-                  <Mail className="w-4 h-4" /> hello@optimaks.com
+                <a href="mailto:hello@optimaks.cc" className="flex items-center gap-2 text-slate-500 hover:text-brand-blue transition-colors">
+                  <Mail className="w-4 h-4" /> hello@optimaks.cc
                 </a>
               </li>
               <li>
