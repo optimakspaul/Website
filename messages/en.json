@@ -395,6 +395,14 @@
     "step3_p4": "Each extra task it takes over: +$49 / month",
     "fine_print": "\"One task\" = one fixed starting point + up to 3-4 follow-up actions (e.g. order received → record created → quote generated → sent via WhatsApp). Monthly fee starts the month after your assistant goes to work. All prices in SGD.",
     "cta": "Book the $79 On-site Check",
-    "wa_message": "Hi, I'd like to book the $79 on-site workflow check."
+    "wa_message": "Hi, I'd like to book the $79 on-site workflow check.",
+    "pay_now": "Pay & Book Online"
+  },
+  "PaymentSuccess": {
+    "title": "Payment Successful!",
+    "subtitle": "We've received your order and will contact you via WhatsApp or email within 1 business day to schedule. Your receipt has been emailed to you.",
+    "wa_btn": "Speed it up: WhatsApp us now",
+    "wa_message": "Hi, I've just completed the online payment and would like to schedule.",
+    "back_home": "Back to home"
   }
 }

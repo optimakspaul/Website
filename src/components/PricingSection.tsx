@@ -2,6 +2,7 @@ import React from 'react';
 import { Check, MessageCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { buildWhatsAppUrl, hasWhatsAppNumber } from '@/lib/whatsapp';
+import CheckoutButton from '@/components/CheckoutButton';
 
 export default function PricingSection() {
   const t = useTranslations('Pricing');
@@ -17,7 +18,8 @@ export default function PricingSection() {
       price: t('step1_price'),
       unit: t('step1_unit'),
       points: [t('step1_p1'), t('step1_p2'), t('step1_p3')],
-      highlight: false
+      highlight: false,
+      plan: 'audit' as const
     },
     {
       step: t('step_2'),
@@ -27,7 +29,8 @@ export default function PricingSection() {
       unit: t('step2_unit'),
       badge: t('step2_badge'),
       points: [t('step2_p1'), t('step2_p2'), t('step2_p3'), t('step2_p4')],
-      highlight: true
+      highlight: true,
+      plan: 'setup' as const
     },
     {
       step: t('step_3'),
@@ -36,7 +39,8 @@ export default function PricingSection() {
       price: t('step3_price'),
       unit: t('step3_unit'),
       points: [t('step3_p1'), t('step3_p2'), t('step3_p3'), t('step3_p4')],
-      highlight: false
+      highlight: false,
+      plan: null
     }
   ];
 
@@ -100,6 +104,12 @@ export default function PricingSection() {
                   </li>
                 ))}
               </ul>
+
+              {plan.plan && (
+                <div className="mt-auto">
+                  <CheckoutButton plan={plan.plan} label={t('pay_now')} highlight={plan.highlight} />
+                </div>
+              )}
             </div>
           ))}
         </div>
