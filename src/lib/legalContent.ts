@@ -107,8 +107,8 @@ export const legalContent: Record<DocKey, Record<Locale, LegalDoc>> = {
       updated: UPDATED,
       intro: '我們希望每一筆合作都清楚明白。以下是各項服務的退款規則。',
       sections: [
-        { h: '流程健檢（$79）', p: ['健檢完成並交付流程藍圖後，該筆費用不予退還——你付費購買的是診斷與藍圖本身。', '若我們尚未進行健檢，你可以隨時來信取消並獲得全額退款。', '確認進行系統建置時，$79 將全額折抵建置費。'] },
-        { h: '系統建置（$479 起）', p: ['在我們正式動工（開始梳理邏輯與串接）之前，可取消並獲得全額退款。', '動工後至上線前，將依已完成的進度協商部分退款。', '系統上線（Go-Live）後，建置費不予退還。'] },
+        { h: '流程健檢（$79）', p: ['健檢完成並交付流程藍圖後，費用不予退還——你付費購買的是診斷與藍圖本身。', '於預約時段前一個工作日 17:00（新加坡時間）前來信取消，可獲全額退款。', '逾期取消或未出席，視同服務已交付，費用不退、不另重排。', '確認進行系統建置時，$79 全額折抵建置費（限付款日起 30 天內行使）。'] },
+        { h: '系統建置（$479 起）', p: ['於排定開工日前一個工作日 17:00（新加坡時間）前來信取消，可獲全額退款。', '開工後即投入流程梳理、邏輯設計與系統架設等前置成本，此階段取消最高退還已付金額之 30%。', '系統上線（Go-Live）後，建置費不予退還。'] },
         { h: '雲端管家月費', p: ['可隨時取消，自次一計費週期起生效；已支付的當期月費不按比例退還。'] },
         { h: '如何申請', p: ['來信 hello@optimaks.cc 並附上訂單資訊（Email 或 Stripe 收據），我們將於 5 個工作天內處理。退款將原路退回付款方式。'] }
       ]
@@ -118,8 +118,8 @@ export const legalContent: Record<DocKey, Record<Locale, LegalDoc>> = {
       updated: UPDATED,
       intro: '我们希望每一笔合作都清楚明白。以下是各项服务的退款规则。',
       sections: [
-        { h: '流程健检（$79）', p: ['健检完成并交付流程蓝图后，该笔费用不予退还——你付费购买的是诊断与蓝图本身。', '若我们尚未进行健检，你可以随时来信取消并获得全额退款。', '确认进行系统建置时，$79 将全额折抵建置费。'] },
-        { h: '系统建置（$479 起）', p: ['在我们正式动工（开始梳理逻辑与串接）之前，可取消并获得全额退款。', '动工后至上线前，将依已完成的进度协商部分退款。', '系统上线（Go-Live）后，建置费不予退还。'] },
+        { h: '流程健检（$79）', p: ['健检完成并交付流程蓝图后，费用不予退还——你付费购买的是诊断与蓝图本身。', '于预约时段前一个工作日 17:00（新加坡时间）前来信取消，可获全额退款。', '逾期取消或未出席，视同服务已交付，费用不退、不另重排。', '确认进行系统建置时，$79 全额折抵建置费（限付款日起 30 天内行使）。'] },
+        { h: '系统建置（$479 起）', p: ['于排定开工日前一个工作日 17:00（新加坡时间）前来信取消，可获全额退款。', '开工后即投入流程梳理、逻辑设计与系统架设等前置成本，此阶段取消最高退还已付金额之 30%。', '系统上线（Go-Live）后，建置费不予退还。'] },
         { h: '云端管家月费', p: ['可随时取消，自次一计费周期起生效；已支付的当期月费不按比例退还。'] },
         { h: '如何申请', p: ['来信 hello@optimaks.cc 并附上订单资讯（Email 或 Stripe 收据），我们将于 5 个工作天内处理。退款将原路退回付款方式。'] }
       ]
@@ -129,8 +129,8 @@ export const legalContent: Record<DocKey, Record<Locale, LegalDoc>> = {
       updated: UPDATED,
       intro: 'We want every engagement to be clear-cut. Here are the refund rules for each service.',
       sections: [
-        { h: 'Workflow Audit ($79)', p: ['Once the audit is completed and the blueprint delivered, this fee is non-refundable — the diagnosis and blueprint are what you purchased.', 'If the audit has not yet taken place, you may cancel anytime by email for a full refund.', 'If you proceed to System Setup, the $79 is fully credited against the setup fee.'] },
-        { h: 'System Setup (from $479)', p: ['Before work formally begins (logic mapping and integration), you may cancel for a full refund.', 'Between kick-off and go-live, partial refunds are negotiated based on completed progress.', 'After go-live, the setup fee is non-refundable.'] },
+        { h: 'Workflow Audit ($79)', p: ['Once the audit is completed and the blueprint delivered, the fee is non-refundable — the diagnosis and blueprint are what you purchased.', 'Cancel by email before 5:00 PM (Singapore time) on the business day prior to your scheduled slot for a full refund.', 'Late cancellations and no-shows are treated as services delivered: no refund, no rescheduling.', 'If you proceed to System Setup, the $79 is fully credited against the setup fee (credit valid for 30 days from payment).'] },
+        { h: 'System Setup (from $479)', p: ['Cancel by email before 5:00 PM (Singapore time) on the business day prior to the scheduled kick-off for a full refund.', 'Once work begins, upfront costs are incurred in process mapping, logic design and system provisioning; cancellations at this stage are refunded up to a maximum of 30% of the amount paid.', 'After go-live, the setup fee is non-refundable.'] },
         { h: 'Cloud Concierge (Monthly)', p: ['Cancel anytime, effective from the next billing cycle; the current month’s fee is not refunded pro-rata.'] },
         { h: 'How to Request', p: ['Email hello@optimaks.cc with your order details (email or Stripe receipt). We process requests within 5 business days, refunded to the original payment method.'] }
       ]
