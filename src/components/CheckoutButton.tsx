@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { CreditCard, Loader2 } from 'lucide-react';
 import { useLocale } from 'next-intl';
+import { track } from '@vercel/analytics';
 
 interface CheckoutButtonProps {
   plan: 'audit' | 'setup';
@@ -15,6 +16,7 @@ export default function CheckoutButton({ plan, label, highlight = false }: Check
   const [loading, setLoading] = useState(false);
 
   const handleClick = async () => {
+    track('checkout_click', { plan });
     setLoading(true);
     try {
       const res = await fetch('/api/checkout', {

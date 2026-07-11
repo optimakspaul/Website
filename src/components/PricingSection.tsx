@@ -3,6 +3,7 @@ import { Check, MessageCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { buildWhatsAppUrl, hasWhatsAppNumber } from '@/lib/whatsapp';
 import CheckoutButton from '@/components/CheckoutButton';
+import TrackedLink from '@/components/TrackedLink';
 
 export default function PricingSection() {
   const t = useTranslations('Pricing');
@@ -115,7 +116,9 @@ export default function PricingSection() {
         </div>
 
         <div className="text-center mt-12">
-          <a
+          <TrackedLink
+            event="whatsapp_click"
+            eventData={{ location: 'pricing' }}
             href={ctaHref}
             target={ctaHref.startsWith('#') ? undefined : '_blank'}
             rel={ctaHref.startsWith('#') ? undefined : 'noopener noreferrer'}
@@ -123,7 +126,7 @@ export default function PricingSection() {
           >
             <MessageCircle className="w-5 h-5" />
             {t('cta')}
-          </a>
+          </TrackedLink>
           <p className="text-xs text-slate-400 mt-6 max-w-xl mx-auto leading-relaxed">
             {t('fine_print')}
           </p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, MessageCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { buildWhatsAppUrl, hasWhatsAppNumber } from '@/lib/whatsapp';
 
 export default function Footer() {
@@ -61,8 +62,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Optimaks. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-sm text-slate-400">
-            <span className="cursor-default">{t('privacy')} (Coming Soon)</span>
-            <span className="cursor-default">{t('terms')} (Coming Soon)</span>
+            <Link href="/legal/privacy" className="hover:text-slate-600 transition-colors">{t('privacy')}</Link>
+            <Link href="/legal/terms" className="hover:text-slate-600 transition-colors">{t('terms')}</Link>
+            <Link href="/legal/refund" className="hover:text-slate-600 transition-colors">{t('refund')}</Link>
           </div>
         </div>
       </div>

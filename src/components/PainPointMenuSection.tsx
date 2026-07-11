@@ -2,6 +2,7 @@ import React from 'react';
 import { Receipt, Truck, MessageSquareText, Frown, Sparkles, ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { buildWhatsAppUrl, hasWhatsAppNumber } from '@/lib/whatsapp';
+import TrackedLink from '@/components/TrackedLink';
 
 export default function PainPointMenuSection() {
   const t = useTranslations('PainMenu');
@@ -91,7 +92,9 @@ export default function PainPointMenuSection() {
                 <p className="text-slate-700 text-sm leading-relaxed font-medium">{pack.fix}</p>
               </div>
 
-              <a
+              <TrackedLink
+                event="whatsapp_click"
+                eventData={{ location: 'pain_menu', pack: pack.tag }}
                 href={pack.href}
                 target={pack.href.startsWith('#') ? undefined : '_blank'}
                 rel={pack.href.startsWith('#') ? undefined : 'noopener noreferrer'}
@@ -99,7 +102,7 @@ export default function PainPointMenuSection() {
               >
                 {t('card_cta')}
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </TrackedLink>
             </div>
           ))}
         </div>

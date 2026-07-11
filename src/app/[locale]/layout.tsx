@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_TC } from "next/font/google";
 import "../globals.css";
 import {NextIntlClientProvider} from 'next-intl';
+import {Analytics} from '@vercel/analytics/next';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
@@ -20,12 +21,25 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const locale = resolvedParams.locale;
 
+  const metadataBase = new URL('https://optimaks.cc');
+  const alternates = {
+    canonical: `/${locale}`,
+    languages: {
+      'zh-TW': '/zh-TW',
+      'zh-CN': '/zh-CN',
+      'en': '/en',
+      'x-default': '/zh-TW'
+    }
+  };
+
   if (locale === 'en') {
     const title = "Optimaks | Workflow Automation Partner for SG & SEA SMEs";
     const description = "We help service SMEs automate chaotic manual workflows. Custom WhatsApp bots, smart scheduling, auto-quoting and tracking with zero lock-in.";
     return {
       title,
       description,
+      metadataBase,
+      alternates,
       openGraph: {
         title,
         description,
@@ -47,6 +61,8 @@ export async function generateMetadata({
   return {
     title: titleZh,
     description: descriptionZh,
+    metadataBase,
+    alternates,
     openGraph: {
       title: titleZh,
       description: descriptionZh,
@@ -87,6 +103,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
