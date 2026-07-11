@@ -59,7 +59,7 @@ export default function HeroSection() {
                 <Zap className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 {t('cta_primary')}
               </a>
-              <a href="#example-workflows" className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:border-slate-300 flex items-center justify-center gap-2 group">
+              <a href="#assistant-demo" className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:border-slate-300 flex items-center justify-center gap-2 group">
                 {t('cta_secondary')}
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>

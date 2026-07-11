@@ -2,7 +2,9 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import PainPointsSection from '@/components/PainPointsSection';
 import BeforeAfterSection from '@/components/BeforeAfterSection';
-import ServicesSection from '@/components/ServicesSection';
+import PainPointMenuSection from '@/components/PainPointMenuSection';
+import AssistantShowcase from '@/components/AssistantShowcase';
+import PricingSection from '@/components/PricingSection';
 import IndustriesSection from '@/components/IndustriesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import WorkflowCheck from '@/components/WorkflowCheck';
@@ -20,9 +22,11 @@ export default function Home() {
         <HeroSection />
         <PainPointsSection />
         <BeforeAfterSection />
-        <ServicesSection />
+        <PainPointMenuSection />
+        <AssistantShowcase />
         <IndustriesSection />
         <HowItWorksSection />
+        <PricingSection />
         <WorkflowCheck />
         <TrustSection />
         <FaqSection />

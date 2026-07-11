@@ -8,23 +8,40 @@ import { buildWhatsAppUrl, buildAuditWhatsAppMessage, hasWhatsAppNumber } from '
 export default function WorkflowCheck() {
   const t = useTranslations('WorkflowCheck');
 
-  const steps = [
-    {
-      title: t('step_1_title'),
-      options: [t('step_1_opt_1'), t('step_1_opt_2'), t('step_1_opt_3'), t('step_1_opt_4'), t('step_1_opt_5'), t('step_1_opt_6')]
-    },
-    {
-      title: t('step_2_title'),
-      options: [t('step_2_opt_1'), t('step_2_opt_2'), t('step_2_opt_3'), t('step_2_opt_4'), t('step_2_opt_5'), t('step_2_opt_6')]
-    },
-    {
-      title: t('step_3_title'),
-      options: [t('step_3_opt_1'), t('step_3_opt_2'), t('step_3_opt_3'), t('step_3_opt_4'), t('step_3_opt_5'), t('step_3_opt_6')]
-    },
-    {
-      title: t('step_4_title'),
-      options: [t('step_4_opt_1'), t('step_4_opt_2'), t('step_4_opt_3'), t('step_4_opt_4'), t('step_4_opt_5'), t('step_4_opt_6')]
-    }
+  const step1Options = [t('step_1_opt_1'), t('step_1_opt_2'), t('step_1_opt_3'), t('step_1_opt_4'), t('step_1_opt_5'), t('step_1_opt_6'), t('step_1_opt_7'), t('step_1_opt_8'), t('step_1_opt_9')];
+
+  // Pain option pool for Q2
+  const pains: Record<string, string> = {
+    leads: t('step_2_opt_1'),
+    quote: t('step_2_opt_2'),
+    sched: t('step_2_opt_3'),
+    payment: t('step_2_opt_4'),
+    track: t('step_2_opt_5'),
+    visibility: t('step_2_opt_6'),
+    orders: t('pain_orders'),
+    fleet: t('pain_fleet'),
+    status: t('pain_status'),
+    stock: t('pain_stock'),
+    noshow: t('pain_noshow'),
+    renewal: t('pain_renewal'),
+    tickets: t('pain_tickets'),
+    vendors: t('pain_vendors'),
+    docs: t('pain_docs'),
+    deadline: t('pain_deadline'),
+    ot: t('pain_ot')
+  };
+
+  // Q2 pain sets per Q1 industry (same order as step1Options)
+  const painSets: string[][] = [
+    ['leads', 'quote', 'sched', 'payment', 'track', 'visibility'],      // 冷氣
+    ['leads', 'sched', 'payment', 'track', 'renewal', 'visibility'],    // 清潔
+    ['leads', 'quote', 'sched', 'payment', 'track', 'visibility'],      // 修繕
+    ['leads', 'quote', 'fleet', 'status', 'payment', 'visibility'],     // 物流
+    ['docs', 'deadline', 'payment', 'renewal', 'leads', 'visibility'],  // 會計
+    ['orders', 'stock', 'fleet', 'payment', 'leads', 'visibility'],     // 餐飲
+    ['noshow', 'leads', 'sched', 'renewal', 'payment', 'visibility'],   // 美容健身
+    ['tickets', 'vendors', 'renewal', 'payment', 'docs', 'visibility'], // 物業
+    ['leads', 'quote', 'sched', 'payment', 'ot', 'visibility']          // 其他
   ];
 
   const [currentStep, setCurrentStep] = useState(0);
@@ -38,11 +55,32 @@ export default function WorkflowCheck() {
   const locale = useLocale();
   const isChinese = locale.startsWith('zh');
 
+  // Q2 options depend on the industry picked in Q1
+  const industryIdx = Math.max(0, step1Options.indexOf((selections[0] || [])[0]));
+  const steps = [
+    {
+      title: t('step_1_title'),
+      options: step1Options
+    },
+    {
+      title: t('step_2_title'),
+      options: painSets[industryIdx].map(key => pains[key])
+    },
+    {
+      title: t('step_3_title'),
+      options: [t('step_3_opt_1'), t('step_3_opt_2'), t('step_3_opt_3'), t('step_3_opt_4'), t('step_3_opt_5'), t('step_3_opt_6')]
+    },
+    {
+      title: t('step_4_title'),
+      options: [t('step_4_opt_1'), t('step_4_opt_2'), t('step_4_opt_3'), t('step_4_opt_4'), t('step_4_opt_5'), t('step_4_opt_6')]
+    }
+  ];
+
   const toggleSelection = (stepIndex: number, option: string) => {
     setSelections(prev => {
       const currentSelections = prev[stepIndex] || [];
       const isSelected = currentSelections.includes(option);
-      
+
       let newSelections;
       if (isSelected) {
         newSelections = currentSelections.filter(i => i !== option);
@@ -53,6 +91,10 @@ export default function WorkflowCheck() {
         } else {
             newSelections = [...currentSelections, option];
         }
+      }
+      // Q1 is single-choice; changing industry invalidates previously picked pain points
+      if (stepIndex === 0) {
+        return { ...prev, 0: isSelected ? [] : [option], 1: [] };
       }
       return { ...prev, [stepIndex]: newSelections };
     });
@@ -164,7 +206,7 @@ export default function WorkflowCheck() {
                   </span>
                 </h3>
                 
-                <div className="max-h-[35vh] md:max-h-none overflow-y-auto pr-1 -mr-1 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-slate-200 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent">
+                <div>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 pb-1">
                   {steps[currentStep].options.map(option => {
                     const isSelected = (selections[currentStep] || []).includes(option);
@@ -180,7 +222,7 @@ export default function WorkflowCheck() {
                             }, 300); // Small delay so they see the checkmark
                           }
                         }}
-                        className={`text-left px-3 py-3 md:px-4 md:py-3.5 rounded-xl border-2 transition-all duration-200 font-medium text-sm md:text-base flex flex-col justify-center min-h-[4rem]
+                        className={`text-left px-3 py-2 md:px-4 md:py-3.5 rounded-xl border-2 transition-all duration-200 font-medium text-sm md:text-base flex flex-col justify-center min-h-[2.75rem] md:min-h-[4rem]
                           ${isSelected 
                             ? 'border-brand-blue bg-blue-50 text-brand-blue shadow-sm ring-1 ring-brand-blue/30' 
                             : 'border-slate-100 hover:border-slate-300 hover:bg-slate-50 text-slate-600'

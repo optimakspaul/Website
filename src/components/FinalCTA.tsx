@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket } from 'lucide-react';
+import { Rocket, Mail } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function FinalCTA() {
@@ -26,6 +26,16 @@ export default function FinalCTA() {
           </a>
           <p className="text-sm text-slate-400 font-medium">
             {t('note')}
+          </p>
+          <p className="text-sm text-slate-400 font-medium mt-2">
+            {t('email_prompt')}{' '}
+            <a
+              href={`mailto:hello@optimaks.cc?body=${encodeURIComponent(t('email_wording'))}`}
+              className="inline-flex items-center gap-1.5 text-slate-200 font-bold hover:text-white hover:underline transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+              hello@optimaks.cc
+            </a>
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Snowflake, Sparkles, Wrench, Calculator, ChevronRight } from 'lucide-react';
+import { Snowflake, Sparkles, Wrench, Calculator, Truck, ChefHat, Dumbbell, Building2, LayoutGrid, ChevronRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function IndustriesSection() {
@@ -60,7 +60,97 @@ export default function IndustriesSection() {
         { title: t('w_4_s3_t'), desc: t('w_4_s3_d') },
         { title: t('w_4_s4_t'), desc: t('w_4_s4_d') },
       ]
+    },
+    {
+      id: 4,
+      name: t('ind_5'),
+      icon: Truck,
+      color: 'bg-amber-500/10 text-amber-600 border-amber-500/20',
+      activeColor: 'bg-amber-500 text-white',
+      steps: [
+        { title: t('w_5_s1_t'), desc: t('w_5_s1_d') },
+        { title: t('w_5_s2_t'), desc: t('w_5_s2_d') },
+        { title: t('w_5_s3_t'), desc: t('w_5_s3_d') },
+        { title: t('w_5_s4_t'), desc: t('w_5_s4_d') },
+      ]
+    },
+    {
+      id: 5,
+      name: t('ind_6'),
+      icon: ChefHat,
+      color: 'bg-rose-500/10 text-rose-500 border-rose-500/20',
+      activeColor: 'bg-rose-500 text-white',
+      steps: [
+        { title: t('w_6_s1_t'), desc: t('w_6_s1_d') },
+        { title: t('w_6_s2_t'), desc: t('w_6_s2_d') },
+        { title: t('w_6_s3_t'), desc: t('w_6_s3_d') },
+        { title: t('w_6_s4_t'), desc: t('w_6_s4_d') },
+      ]
+    },
+    {
+      id: 6,
+      name: t('ind_7'),
+      icon: Dumbbell,
+      color: 'bg-pink-500/10 text-pink-500 border-pink-500/20',
+      activeColor: 'bg-pink-500 text-white',
+      steps: [
+        { title: t('w_7_s1_t'), desc: t('w_7_s1_d') },
+        { title: t('w_7_s2_t'), desc: t('w_7_s2_d') },
+        { title: t('w_7_s3_t'), desc: t('w_7_s3_d') },
+        { title: t('w_7_s4_t'), desc: t('w_7_s4_d') },
+      ]
+    },
+    {
+      id: 7,
+      name: t('ind_8'),
+      icon: Building2,
+      color: 'bg-cyan-500/10 text-cyan-600 border-cyan-500/20',
+      activeColor: 'bg-cyan-500 text-white',
+      steps: [
+        { title: t('w_8_s1_t'), desc: t('w_8_s1_d') },
+        { title: t('w_8_s2_t'), desc: t('w_8_s2_d') },
+        { title: t('w_8_s3_t'), desc: t('w_8_s3_d') },
+        { title: t('w_8_s4_t'), desc: t('w_8_s4_d') },
+      ]
+    },
+    {
+      id: 8,
+      name: t('ind_9'),
+      icon: LayoutGrid,
+      color: 'bg-slate-700/10 text-slate-700 border-slate-700/20',
+      activeColor: 'bg-slate-800 text-white',
+      steps: [
+        { title: t('w_9_s1_t'), desc: t('w_9_s1_d') },
+        { title: t('w_9_s2_t'), desc: t('w_9_s2_d') },
+        { title: t('w_9_s3_t'), desc: t('w_9_s3_d') },
+        { title: t('w_9_s4_t'), desc: t('w_9_s4_d') },
+      ]
     }
+  ];
+
+  // Effect tag per step, indexed by [workflowId][stepIdx]
+  const tagStyles: Record<string, string> = {
+    money: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    time: 'bg-blue-50 text-blue-700 border-blue-200',
+    deals: 'bg-violet-50 text-violet-700 border-violet-200',
+    risk: 'bg-amber-50 text-amber-700 border-amber-200'
+  };
+  const tagLabels: Record<string, string> = {
+    money: t('tag_money'),
+    time: t('tag_time'),
+    deals: t('tag_deals'),
+    risk: t('tag_risk')
+  };
+  const stepTags: string[][] = [
+    ['deals', 'time', 'risk', 'money'],   // 冷氣
+    ['time', 'time', 'risk', 'money'],    // 清潔
+    ['deals', 'time', 'time', 'money'],   // 修繕
+    ['time', 'time', 'risk', 'money'],    // 會計
+    ['time', 'time', 'risk', 'money'],    // 物流
+    ['time', 'risk', 'time', 'money'],    // 餐飲
+    ['deals', 'risk', 'money', 'deals'],  // 美容健身
+    ['time', 'risk', 'risk', 'time'],     // 物業
+    ['time', 'risk', 'time', 'time']      // 通用
   ];
 
   const activeWorkflow = workflows[activeTab];
@@ -108,6 +198,14 @@ export default function IndustriesSection() {
                 className="bg-slate-50 hover:bg-white border border-slate-200/60 hover:border-slate-300 p-5 md:p-6 rounded-2xl transition-all duration-300 hover:shadow-lg relative group flex flex-col justify-between min-h-[160px]"
               >
                 <div>
+                  <div className="flex items-center gap-1.5 flex-wrap mb-2.5">
+                    <span className="inline-block text-[10px] font-bold text-slate-400 bg-white border border-slate-200 px-2 py-0.5 rounded-full">
+                      {t('step_badge')}
+                    </span>
+                    <span className={`inline-block text-[10px] font-bold border px-2 py-0.5 rounded-full ${tagStyles[stepTags[activeTab][idx]]}`}>
+                      {tagLabels[stepTags[activeTab][idx]]}
+                    </span>
+                  </div>
                   <h4 className="text-base md:text-lg font-bold text-slate-800 mb-2 leading-tight group-hover:text-[#0070f3] transition-colors">
                     {step.title}
                   </h4>
@@ -126,6 +224,13 @@ export default function IndustriesSection() {
             ))}
           </div>
         </div>
+
+        <p className="text-center text-sm text-slate-500 mt-10 max-w-2xl mx-auto">
+          {t('count_note')}{' '}
+          <a href="#pricing" className="text-[#0070f3] font-bold hover:underline">
+            →
+          </a>
+        </p>
       </div>
     </section>
   );
