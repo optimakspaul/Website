@@ -176,14 +176,15 @@
     "nav_title": "Navigation",
     "nav_about": "About Us",
     "nav_how": "How We Do It",
-    "nav_services": "Services",
+    "nav_services": "Digital Admin",
     "nav_who": "Example Workflows",
     "nav_resources": "Resources",
     "contact_title": "Contact Us",
     "contact_wa": "Contact via WhatsApp",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "refund": "Refund Policy"
+    "refund": "Refund Policy",
+    "nav_pricing": "Pricing"
   },
   "WorkflowCheck": {
     "section_title": "1-Min Workflow Audit",
@@ -296,19 +297,19 @@
   "FAQ": {
     "section_title": "Frequently Asked Questions",
     "q1": "What kind of systems do you build?",
-    "a1": "We build custom WhatsApp bots, CRM integrations, smart scheduling, auto-quotes, and automated invoice tracking tailored to your workflow.",
+    "a1": "Our core work is implementing automated workflows — not selling you another piece of software: enquiry capture, smart scheduling, auto-quoting, invoice and payment tracking, automated reporting, all wired into the tools you already use.",
     "q2": "Do we need to change our software?",
-    "a2": "No, you don't. We integrate with what your team already uses daily (like WhatsApp and Excel), meaning zero training friction for your staff.",
+    "a2": "No. We integrate directly with the tools your team already uses every day — WhatsApp, Excel / Google Sheets, email, Google Calendar, online forms, even your existing CRM or ERP. Zero retraining for your staff.",
     "q3": "How long does it take?",
     "a3": "Our lightweight integrations typically go live in 7 to 14 days, compared to months with traditional corporate IT firms.",
     "q4": "How much does it cost?",
     "a4": "Since we use lightweight tools and existing infrastructure, our projects cost a fraction of custom ERP builds, offering instant ROI.",
     "q5": "Who owns the code and the system?",
-    "a5": "You own all your business data — every record in your Google Sheets and reports is yours. The underlying system is hosted and maintained by us in the cloud, just like subscribing to Microsoft 365. You never need to hire IT staff to babysit it.",
+    "a5": "All business data (customer records, orders, reports) belongs to you. We run 2 scheduled backups every month, and you can request a full export anytime. The underlying system is hosted and maintained by us in the cloud — like subscribing to Microsoft 365, with no IT staff to babysit it.",
     "q6": "What counts as \"one workflow\"?",
     "a6": "One workflow = a single trigger + up to 3-4 linear actions. For example: form submitted → record created → PDF quote generated → sent via WhatsApp. Multi-branch logic or multi-system integrations count as a second workflow — we define the scope in writing before quoting.",
     "q7": "How is legacy data migration charged?",
-    "a7": "Setup includes free import of your latest 30 records for go-live testing. Bulk historical data cleaning and import is an optional add-on, priced in tiers by record count; paper documents or PDF scans are quoted separately as a standalone project."
+    "a7": "Clean digital files (Excel / CSV / Google Sheets) are imported free. Messy data that needs manual cleaning, restructuring or de-duplication is quoted by effort; paper documents and PDF scans are a standalone project, quoted separately."
   },
   "PainMenu": {
     "section_title": "Until You Find the Right Person, Let a \"Digital Admin\" Step In",
