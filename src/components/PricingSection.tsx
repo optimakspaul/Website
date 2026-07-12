@@ -127,7 +127,7 @@ export default function PricingSection() {
             <MessageCircle className="w-5 h-5" />
             {t('cta')}
           </TrackedLink>
-          <p className="text-xs text-slate-400 mt-6 max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs text-slate-500 mt-6 max-w-xl mx-auto leading-relaxed">
             {t('fine_print')}
           </p>
         </div>

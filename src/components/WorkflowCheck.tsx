@@ -52,6 +52,7 @@ export default function WorkflowCheck() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [showPreview, setShowPreview] = useState(false);
+  const [formError, setFormError] = useState('');
   const locale = useLocale();
   const isChinese = locale.startsWith('zh');
 
@@ -114,6 +115,15 @@ export default function WorkflowCheck() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (phone.replace(/\D/g, '').length < 8) {
+      setFormError(t('form_err_phone'));
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setFormError(t('form_err_email'));
+      return;
+    }
+    setFormError('');
     setShowPreview(true);
   };
 
@@ -299,11 +309,16 @@ export default function WorkflowCheck() {
                       <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} placeholder={t('form_company')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
                       <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t('form_phone')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
                       <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t('form_email')} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" required />
+                      {formError && (
+                        <p className="text-sm font-semibold text-rose-600 bg-rose-50 border border-rose-100 rounded-lg px-3 py-2" role="alert">
+                          {formError}
+                        </p>
+                      )}
                       <button type="submit" className="w-full bg-brand-green hover:bg-brand-green-hover text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-green/20 cursor-pointer">
                         {t('form_btn')} <ArrowRight className="w-4 h-4" />
                       </button>
                     </form>
-                    <p className="text-xs text-slate-400 mt-4">{t('form_note')}</p>
+                    <p className="text-xs text-slate-500 mt-4">{t('form_note')}</p>
                   </>
                 ) : (
                   <div className="animation-fade-in text-left">

@@ -1,7 +1,7 @@
 {
   "Hero": {
     "subtitle": "Hiring an Admin takes 30 days. This starts in 7.",
-    "title": "No Admin Yet?<br/>Let a Digital Assistant Hold the Fort.",
+    "title": "No Admin Yet?<br/>Let a Digital Admin Hold the Fort.",
     "description": "It chases payments, dispatches jobs, catches leads and does your reports while you search for the right hire — so your new hire walks into a clean, running system.",
     "cta_primary": "Start 1-Min Workflow Audit",
     "cta_secondary": "See It At Work",
@@ -25,11 +25,12 @@
   "Navbar": {
     "about": "About Us",
     "how": "How We Do It",
-    "services": "Digital Assistants",
+    "services": "Digital Admins",
     "who": "Example Workflows",
     "cases": "Cases",
     "resources": "Resources",
-    "cta": "Start 1-Min Workflow Audit"
+    "cta": "Start 1-Min Workflow Audit",
+    "pricing": "Pricing"
   },
   "PainPoints": {
     "section_title": "Is your company stuck in these daily operational bottlenecks?",
@@ -175,14 +176,15 @@
     "nav_title": "Navigation",
     "nav_about": "About Us",
     "nav_how": "How We Do It",
-    "nav_services": "Services",
+    "nav_services": "Digital Admin",
     "nav_who": "Example Workflows",
     "nav_resources": "Resources",
     "contact_title": "Contact Us",
     "contact_wa": "Contact via WhatsApp",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "refund": "Refund Policy"
+    "refund": "Refund Policy",
+    "nav_pricing": "Pricing"
   },
   "WorkflowCheck": {
     "section_title": "1-Min Workflow Audit",
@@ -252,7 +254,9 @@
     "form_note": "We respect your privacy. Used only for sending your workflow report.",
     "ready_send_title": "Ready to send your workflow result?",
     "message_preview": "Message Preview:",
-    "send_btn": "Send to WhatsApp"
+    "send_btn": "Send to WhatsApp",
+    "form_err_phone": "Please enter a valid WhatsApp number (at least 8 digits)",
+    "form_err_email": "That email doesn't look right — please double-check"
   },
   "WhatsAppMockup": {
     "incoming_title": "Incoming WhatsApp Inquiry",
@@ -295,22 +299,22 @@
   "FAQ": {
     "section_title": "Frequently Asked Questions",
     "q1": "What kind of systems do you build?",
-    "a1": "We build custom WhatsApp bots, CRM integrations, smart scheduling, auto-quotes, and automated invoice tracking tailored to your workflow.",
+    "a1": "Our core work is implementing automated workflows — not selling you another piece of software: enquiry capture, smart scheduling, auto-quoting, invoice and payment tracking, automated reporting, all wired into the tools you already use.",
     "q2": "Do we need to change our software?",
-    "a2": "No, you don't. We integrate with what your team already uses daily (like WhatsApp and Excel), meaning zero training friction for your staff.",
+    "a2": "No. We integrate directly with the tools your team already uses every day — WhatsApp, Excel / Google Sheets, email, Google Calendar, online forms, even your existing CRM or ERP. Zero retraining for your staff.",
     "q3": "How long does it take?",
     "a3": "Our lightweight integrations typically go live in 7 to 14 days, compared to months with traditional corporate IT firms.",
     "q4": "How much does it cost?",
     "a4": "Since we use lightweight tools and existing infrastructure, our projects cost a fraction of custom ERP builds, offering instant ROI.",
     "q5": "Who owns the code and the system?",
-    "a5": "You own all your business data — every record in your Google Sheets and reports is yours. The underlying system is hosted and maintained by us in the cloud, just like subscribing to Microsoft 365. You never need to hire IT staff to babysit it.",
+    "a5": "All business data (customer records, orders, reports) belongs to you. We run 2 scheduled backups every month, and you can request a full export anytime. The underlying system is hosted and maintained by us in the cloud — like subscribing to Microsoft 365, with no IT staff to babysit it.",
     "q6": "What counts as \"one workflow\"?",
     "a6": "One workflow = a single trigger + up to 3-4 linear actions. For example: form submitted → record created → PDF quote generated → sent via WhatsApp. Multi-branch logic or multi-system integrations count as a second workflow — we define the scope in writing before quoting.",
     "q7": "How is legacy data migration charged?",
-    "a7": "Setup includes free import of your latest 30 records for go-live testing. Bulk historical data cleaning and import is an optional add-on, priced in tiers by record count; paper documents or PDF scans are quoted separately as a standalone project."
+    "a7": "Clean digital files (Excel / CSV / Google Sheets) are imported free. Messy data that needs manual cleaning, restructuring or de-duplication is quoted by effort; paper documents and PDF scans are a standalone project, quoted separately."
   },
   "PainMenu": {
-    "section_title": "Until You Find the Right Person, Let a \"Digital Assistant\" Step In",
+    "section_title": "Until You Find the Right Person, Let a \"Digital Admin\" Step In",
     "section_subtitle": "It's not here to replace your team — it carries the repetitive chores so your people can do people work. Pick where you're most short-handed; it starts in 7 days.",
     "tagline": "Works 24/7 · Never takes MC · Never makes mistakes",
     "pain_label": "What's happening now",
@@ -330,11 +334,11 @@
     "card_c_pain": "A customer asks for a quote on WhatsApp or your website. You're busy and can't reply. By the time you're free, they've already gone with someone else.",
     "card_c_fix": "Whether the enquiry comes in via WhatsApp, email or your website, it logs the customer instantly, replies \"Got it, we'll arrange this right away\" within 30 seconds — and flags the big-ticket enquiries for you to handle first.",
     "card_c_wa": "Hi, I'd like to know how the Digital Enquiry Receptionist can help me capture leads.",
-    "card_cta": "Hire this assistant"
+    "card_cta": "Hire this Admin"
   },
   "AssistantDemo": {
     "section_title": "See It Actually At Work",
-    "section_subtitle": "This isn't a concept sketch. Here's what the digital assistant does on WhatsApp for bosses every day.",
+    "section_subtitle": "This isn't a concept sketch. Here's what the digital Admin does on WhatsApp for bosses every day.",
     "tab_a": "Payment Chasing",
     "tab_b": "Job Dispatch",
     "tab_c": "Lead Capture",
@@ -357,15 +361,42 @@
     "c_m3": "Here's your quote: Standard Cleaning Package, SGD 150 (PDF attached). Confirm and we'll schedule your slot.",
     "c_note": "Even a customer who messages at 9 PM never slips through.",
     "tab_d": "Boss's Daily Digest",
-    "d_header": "Ops Assistant → Boss",
+    "d_header": "Ops Admin → Boss",
     "d_event": "Sent automatically every morning at 8:00",
     "d_m1": "Morning boss ☀️ Today's ops summary: 💰 3 unpaid invoices totalling SGD 2,150 (1 overdue 14 days) | 📋 6 jobs today — Alan 3, Ben 3, no clashes | 📥 2 enquiries awaiting reply (1 big-ticket ⚠️)",
     "d_m2": "Did the overdue one get a reminder?",
     "d_m3": "2nd reminder sent automatically at 8:01 with PayNow QR ✅ Customer has seen it.",
-    "d_note": "Your whole company's status, read in 30 seconds."
+    "d_note": "Your whole company's status, read in 30 seconds.",
+    "dash_title": "Today's Ops Digest",
+    "dash_r1_label": "Unpaid invoices",
+    "dash_r1_value": "3 · SGD 2,150",
+    "dash_r1_note": "1 overdue 14 days — 2nd reminder sent",
+    "dash_r2_label": "Today's jobs",
+    "dash_r2_value": "6",
+    "dash_r2_note": "Alan 3 · Ben 3 · no clashes",
+    "dash_r3_label": "Enquiries awaiting reply",
+    "dash_r3_value": "2",
+    "dash_r3_note": "1 big-ticket — sales notified to prioritise",
+    "tab_e": "Reports",
+    "e_header": "Reports Admin → Monthly Timesheet",
+    "sheet_c1": "Staff",
+    "sheet_c2": "Hours",
+    "sheet_c3": "OT",
+    "sheet_c4": "Subtotal",
+    "sheet_r1": "Alan|160|12|SGD 2,860",
+    "sheet_r2": "Ben|160|8|SGD 2,720",
+    "sheet_r3": "Siti|152|15|SGD 2,930",
+    "sheet_event": "Cross-checked against roster, exported payroll-ready ✅",
+    "e_note": "No more month-end calculator marathons.",
+    "dash_footer": "Full breakdown synced to your Google Sheet",
+    "sheet_file": "Timesheet_2026-07.xlsx",
+    "sheet_saved": "Auto-saved",
+    "sheet_total": "Total",
+    "sheet_tab_a": "Timesheet",
+    "sheet_tab_b": "Payroll Export"
   },
   "Pricing": {
-    "section_title": "Hire Your Digital Assistant in 3 Steps",
+    "section_title": "Hire Your Digital Admin in 3 Steps",
     "section_subtitle": "Pricing laid out like a menu. No hidden fees, no bottomless customisation.",
     "badge": "Limited-Time Early Bird",
     "step_1": "STEP 1",
@@ -377,7 +408,7 @@
     "step1_p2": "You get a 3-page picture: where money leaks, how to plug it",
     "step1_p3": "Decide to proceed? The $79 comes straight off the setup fee",
     "step_2": "STEP 2",
-    "step2_title": "Your Assistant Starts Work",
+    "step2_title": "Your Admin Starts Work",
     "step2_orig": "$679",
     "step2_price": "$479",
     "step2_unit": "SGD・one-time",
@@ -394,7 +425,7 @@
     "step3_p2": "Handles up to 2,000 tasks for you each month",
     "step3_p3": "1 adjustment per month (e.g. change reminder days or phone numbers)",
     "step3_p4": "Each extra task it takes over: +$49 / month",
-    "fine_print": "\"One task\" = one fixed starting point + up to 3-4 follow-up actions (e.g. order received → record created → quote generated → sent via WhatsApp). Monthly fee starts the month after your assistant goes to work. All prices in SGD.",
+    "fine_print": "\"One task\" = one fixed starting point + up to 3-4 follow-up actions (e.g. order received → record created → quote generated → sent via WhatsApp). Monthly fee starts the month after your Admin goes to work. All prices in SGD.",
     "cta": "Book the $79 On-site Check",
     "wa_message": "Hi, I'd like to book the $79 on-site workflow check.",
     "pay_now": "Pay & Book Online"

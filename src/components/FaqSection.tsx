@@ -23,9 +23,9 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="py-20 bg-white" id="faq">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="py-20 bg-slate-50" id="faq">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-4 tracking-tight">
             {t('section_title')}
           </h2>
@@ -35,29 +35,30 @@ export default function FaqSection() {
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
-              <div
-                key={idx}
-                className="bg-slate-50 border border-slate-200/60 rounded-2xl overflow-hidden transition-all duration-200"
-              >
-                <button
-                  onClick={() => toggleFaq(idx)}
-                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-slate-800 text-base md:text-lg transition-colors hover:text-[#0070f3] cursor-pointer"
-                >
-                  <span>{faq.q}</span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 text-[#0070f3]' : ''
-                    }`}
-                  />
-                </button>
-                
-                {/* Accordion panel */}
+              <div key={idx}>
+                {/* Question: customer bubble, left */}
+                <div className="flex justify-start">
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    aria-expanded={isOpen}
+                    className="relative max-w-[88%] bg-white border border-slate-200/60 text-left px-5 py-3.5 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-3 font-bold text-slate-800 text-sm md:text-base cursor-pointer hover:shadow-md transition-shadow"
+                  >
+                    <span>{faq.q}</span>
+                    <ChevronDown
+                      className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-300 ${
+                        isOpen ? 'rotate-180 text-brand-blue' : ''
+                      }`}
+                    />
+                  </button>
+                </div>
+
+                {/* Answer: assistant bubble, right */}
                 <div
-                  className={`transition-all duration-300 ease-in-out ${
-                    isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+                  className={`flex justify-end overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-6 pb-6 pt-0 text-slate-600 text-sm md:text-base leading-relaxed border-t border-slate-200/40 mt-1">
+                  <div className="relative max-w-[88%] bg-brand-light border border-blue-100 px-5 py-3.5 rounded-2xl rounded-tr-none shadow-sm text-slate-800 text-sm md:text-base leading-relaxed">
                     {faq.a}
                   </div>
                 </div>

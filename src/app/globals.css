@@ -19,16 +19,29 @@
   h1, h2, h3, h4, h5, h6 {
     @apply text-slate-900 font-bold;
   }
+
+  /* Branded keyboard-focus ring instead of browser default */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Respect users who opt out of motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer utilities {
   .glass-card {
     @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-xl rounded-2xl;
-  }
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-emerald-500;
-  }
-  .gradient-bg {
-    @apply bg-gradient-to-br from-white via-blue-50 to-emerald-50;
   }
 }
