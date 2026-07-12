@@ -254,7 +254,9 @@
     "form_note": "We respect your privacy. Used only for sending your workflow report.",
     "ready_send_title": "Ready to send your workflow result?",
     "message_preview": "Message Preview:",
-    "send_btn": "Send to WhatsApp"
+    "send_btn": "Send to WhatsApp",
+    "form_err_phone": "Please enter a valid WhatsApp number (at least 8 digits)",
+    "form_err_email": "That email doesn't look right — please double-check"
   },
   "WhatsAppMockup": {
     "incoming_title": "Incoming WhatsApp Inquiry",

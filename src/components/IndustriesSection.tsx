@@ -199,7 +199,7 @@ export default function IndustriesSection() {
               >
                 <div>
                   <div className="flex items-center gap-1.5 flex-wrap mb-2.5">
-                    <span className="inline-block text-[10px] font-bold text-slate-400 bg-white border border-slate-200 px-2 py-0.5 rounded-full">
+                    <span className="inline-block text-[10px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">
                       {t('step_badge')}
                     </span>
                     <span className={`inline-block text-[10px] font-bold border px-2 py-0.5 rounded-full ${tagStyles[stepTags[activeTab][idx]]}`}>

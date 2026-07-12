@@ -2,7 +2,7 @@
   "Hero": {
     "subtitle": "招 Admin 要等 30 天，它 7 天就上工",
     "title": "还没请到 Admin？<br/>先让数位 Admin 顶着。",
-    "description": "催款、派单、接单、做报表，一件都不漏。在你找到合适的人之前，先把重复的行政杂事交给它——等新同事报到，接手的是一套干净的流程，而不是一堆烂摊子。",
+    "description": "催款、派单、接单、做报表，一件都不漏。在你找到合适的人之前，先把重复的行政杂事交给它。等新同事报到，接手的是一套干净的流程，而不是一堆烂摊子。",
     "cta_primary": "开始 1 分钟流程检查",
     "cta_secondary": "看它怎么上工",
     "feature_sme": "保留现有工具 (WhatsApp/Email/Excel)",
@@ -80,7 +80,7 @@
     "tag_time": "⏱️ 省下人工时间",
     "tag_deals": "📈 多接到生意",
     "tag_risk": "🛡️ 避免漏单出错",
-    "count_note": "此为完整营运范例（共 4 条工作流）。Starter 方案含 2 条——可先从最痛的两步开始，之后随时加购。",
+    "count_note": "此为完整营运范例（共 4 条工作流）。Starter 方案含 2 条，可先从最痛的两步开始，之后随时加购。",
     "ind_1": "冷气工程服务",
     "ind_2": "清洁服务",
     "ind_3": "修缮水电工程",
@@ -254,7 +254,9 @@
     "form_note": "我们非常重视您的隐私，此资讯仅用于发送报告。",
     "ready_send_title": "准备好发送你的流程检测结果了吗？",
     "message_preview": "讯息预览：",
-    "send_btn": "发送到 WhatsApp"
+    "send_btn": "发送到 WhatsApp",
+    "form_err_phone": "请输入有效的 WhatsApp 号码（至少 8 位数字）",
+    "form_err_email": "Email 格式不正确，请再确认一次"
   },
   "WhatsAppMockup": {
     "incoming_title": "即时 WhatsApp 询价模拟",
@@ -313,14 +315,14 @@
   },
   "PainMenu": {
     "section_title": "请到 Admin 之前，先让「数位 Admin」上工",
-    "section_subtitle": "它不是要取代你的团队——它把重复的杂事扛走，让人去做人该做的事。挑一个你最缺人手的位置，7 天后上工。",
+    "section_subtitle": "它不是要取代你的团队，而是把重复的杂事扛走，让人去做人该做的事。挑一个你最缺人手的位置，7 天后上工。",
     "tagline": "24 小时上班・不请假・不出错",
     "pain_label": "你现在的状况",
     "fix_label": "它每天替你做的事",
     "card_a_title": "催款 Admin",
     "card_a_tag": "帮你把该收的钱收回来",
     "card_a_pain": "月底一叠发票没人追，客户老是「忘记」汇款，你又不好意思一直开口催。",
-    "card_a_fix": "每天早上自动检查哪张账单到期了，用公司的名义发 WhatsApp 提醒客户，还附上 PayNow QR Code——客户手机一扫，钱就进来。",
+    "card_a_fix": "每天早上自动检查哪张账单到期了，用公司的名义发 WhatsApp 提醒客户，还附上 PayNow QR Code，客户手机一扫，钱就进来。",
     "card_a_wa": "你好，我想了解「催款 Admin」怎么帮我收款。",
     "card_b_title": "派单 Admin",
     "card_b_tag": "帮你把师傅排得稳稳的",

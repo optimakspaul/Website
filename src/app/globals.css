@@ -44,10 +44,4 @@
   .glass-card {
     @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-xl rounded-2xl;
   }
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-emerald-500;
-  }
-  .gradient-bg {
-    @apply bg-gradient-to-br from-white via-blue-50 to-emerald-50;
-  }
 }
