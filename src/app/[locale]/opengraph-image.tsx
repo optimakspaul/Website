@@ -11,10 +11,10 @@ export default async function OpengraphImage({
   const { locale } = await params;
   const isEn = locale === 'en';
   const title = isEn
-    ? 'No Admin Yet? Let a Digital Assistant Hold the Fort.'
+    ? 'No Admin Yet? Let a Digital Admin Hold the Fort.'
     : locale === 'zh-CN'
-      ? '还没请到人？先让数位助理顶着。'
-      : '還沒請到人？先讓數位助理頂著。';
+      ? '还没请到 Admin？先让数位 Admin 顶着。'
+      : '還沒請到 Admin？先讓數位 Admin 頂著。';
   const subtitle = isEn
     ? 'Payments chased · Jobs dispatched · Leads caught · Reports done'
     : locale === 'zh-CN'
