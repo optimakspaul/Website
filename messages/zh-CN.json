@@ -385,7 +385,13 @@
     "sheet_r2": "Ben|160|8|SGD 2,720",
     "sheet_r3": "Siti|152|15|SGD 2,930",
     "sheet_event": "已自动比对排班并汇出 Payroll 格式 ✅",
-    "e_note": "月底不用再按计算机到半夜。"
+    "e_note": "月底不用再按计算机到半夜。",
+    "dash_footer": "完整明细已同步到你的 Google Sheet",
+    "sheet_file": "工时统计_2026-07.xlsx",
+    "sheet_saved": "已自动储存",
+    "sheet_total": "合计",
+    "sheet_tab_a": "工时统计",
+    "sheet_tab_b": "Payroll 汇出"
   },
   "Pricing": {
     "section_title": "请一位数位 Admin，只要三步",

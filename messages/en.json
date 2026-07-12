@@ -385,7 +385,13 @@
     "sheet_r2": "Ben|160|8|SGD 2,720",
     "sheet_r3": "Siti|152|15|SGD 2,930",
     "sheet_event": "Cross-checked against roster, exported payroll-ready ✅",
-    "e_note": "No more month-end calculator marathons."
+    "e_note": "No more month-end calculator marathons.",
+    "dash_footer": "Full breakdown synced to your Google Sheet",
+    "sheet_file": "Timesheet_2026-07.xlsx",
+    "sheet_saved": "Auto-saved",
+    "sheet_total": "Total",
+    "sheet_tab_a": "Timesheet",
+    "sheet_tab_b": "Payroll Export"
   },
   "Pricing": {
     "section_title": "Hire Your Digital Admin in 3 Steps",
