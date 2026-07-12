@@ -57,8 +57,8 @@ export default function PainPointMenuSection() {
               key={index}
               className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col bg-white"
             >
-              {/* WhatsApp-style contact header */}
-              <div className="bg-[#075e54] text-white px-5 py-3.5 flex items-center gap-3">
+              {/* Contact-style header */}
+              <div className="bg-brand-dark text-white px-5 py-3.5 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/15 border border-white/10 flex items-center justify-center shrink-0">
                   <pack.icon className="w-5 h-5 text-white/90" />
                 </div>
@@ -72,9 +72,8 @@ export default function PainPointMenuSection() {
               </div>
 
               {/* Chat area: boss complains, assistant answers */}
-              <div className="bg-[#efeae2] px-4 py-5 flex-1 relative">
-                <div className="absolute inset-0 bg-[radial-gradient(#cfd4d6_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none"></div>
-                <div className="relative z-10 space-y-3">
+              <div className="bg-slate-100 px-4 py-5 flex-1">
+                <div className="space-y-3">
                   <div className="flex flex-col items-start">
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-1 ml-1">
                       {t('pain_label')}
@@ -85,10 +84,10 @@ export default function PainPointMenuSection() {
                   </div>
 
                   <div className="flex flex-col items-end">
-                    <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-wide mb-1 mr-1">
+                    <span className="text-[10px] font-bold text-brand-blue uppercase tracking-wide mb-1 mr-1">
                       {t('fix_label')}
                     </span>
-                    <div className="relative max-w-[92%] bg-[#d9fdd3] border border-[#c1e8b7] text-slate-800 text-sm px-4 py-3 rounded-2xl rounded-tr-none shadow-sm leading-relaxed">
+                    <div className="relative max-w-[92%] bg-brand-light border border-blue-100 text-slate-800 text-sm px-4 py-3 rounded-2xl rounded-tr-none shadow-sm leading-relaxed">
                       {pack.fix}
                     </div>
                   </div>

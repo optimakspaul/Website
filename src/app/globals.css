@@ -19,6 +19,25 @@
   h1, h2, h3, h4, h5, h6 {
     @apply text-slate-900 font-bold;
   }
+
+  /* Branded keyboard-focus ring instead of browser default */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Respect users who opt out of motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer utilities {
